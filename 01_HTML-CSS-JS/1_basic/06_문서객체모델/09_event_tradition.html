@@ -1,19 +1,21 @@
 <!doctype html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Traditional Event</title>
     <script>
-      window.onload = () => {
-        document.getElementById('button').onclick = () => {
+      // 이벤트를 연결합니다.
+      window.onload = function () {
+        // 문서 객체를 선택합니다.
+        let button = document.getElementById('button');
+        // 이벤트를 연결합니다.
+        button.onclick = function () {
           alert('click');
         };
       };
     </script>
   </head>
   <body>
-    <button id="button">버튼</button>
+    <button id="button">버 튼</button>
 
     <hr />
 
@@ -24,11 +26,11 @@
 
       이벤트 리스너(Event Listener)
       -> 이벤트가 발생하는 것을 대기하고 있다가
-         이벤트가 발생하는 것이 감지되면 연결된 기능(함수)를 수행하는 것
+         이벤트가 발생하는 것이 감지되면 연결된 기능(함수)를 수행하는 것 
 
-         ex) onload, onclick, onkeyup, ... (on이벤트명)
+        ex) onload, onclick, onkeyup, ... (on이벤트명)
 
-         on이벤트명 = "함수명()"
+        on이벤트명 = "함수명()"
 
       이벤트 핸들러(Event Handler)
       -> 이벤트 리스너에 연결된 기능으로
@@ -45,9 +47,9 @@
 
     <button onclick="test1()">인라인 이벤트 모델</button>
     <script>
-      const test1 = () => {
+      function test1() {
         alert('인라인 이벤트 모델');
-      };
+      }
     </script>
 
     <h3>고전 이벤트 모델</h3>
@@ -58,24 +60,26 @@
       -> script에만 이벤트 관련 코드를 작성할 수 있다.
     </pre>
     <button id="test2">고전 이벤트 모델</button>
+
     <script>
-      document.getElementById('test2').onclick = () => {
+      // #test2인 버튼 클릭 시 알림창 출력
+      document.getElementById('test2').onclick = function () {
         alert('고전 이벤트 모델');
       };
     </script>
 
     <h3>표준 이벤트 모델</h3>
     <pre>
-      - W3C(HTML, CSS, JS 웹표준 재정 단체)
-      공식적으로 지정한 이벤트, 모델
-      
-      - 한 요소에 여러 이벤트 핸들러 설정 가능
-      -> 고전 이벤트 모델의 단점 보완
+       - W3C(HTML, CSS, JS 웹표준 재정 단체)에서
+       공식적으로 지정한 이벤트 모델
+
+       - 한 요소에 여러 이벤트 핸들러 설정 가능
+       -> 고전 이벤트 모델 단점 보완
     </pre>
 
     <button id="test3">표준 이벤트 모델</button>
     <script>
-      document.getElementById('test3').addEventListener('click', () => {
+      document.getElementById('test3').addEventListener('click', function () {
         alert('표준 이벤트 모델');
       });
     </script>

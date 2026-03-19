@@ -4,28 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>객체 this</title>
+  </head>
+  <body>
     <script>
-      const name = '박성훈';
+      const name = '전혜선';
       // 문자열 리터럴 표기법 : '', ""
 
       // 객체는 속성과 기능을 가진다.
       let person = {
         name: '박지훈',
-        eat: function (str) {
-          console.log(name);
+        eat: function (bread) {
+          console.log(name); // 전혜선
           // -> 객체 외부 변수 호출
 
           // 같은 객체 내부의 다른 속성을 호출하고 싶은 경우
           // 현재 객체를 뜻하는 this를 써야한다.
-          console.log(this.name + '이 ' + str + '을/를 먹습니다.');
+          alert(this.name + '이 ' + bread + '을 먹는다.');
         },
       };
 
-      console.log(person.eat);
+      console.log(person.name);
+      console.log(person.eat('빵'));
       // 함수명 : 함수 자체
       // 함수명() : 함수 호출
-      person.eat('밥');
     </script>
-  </head>
-  <body></body>
+  </body>
 </html>

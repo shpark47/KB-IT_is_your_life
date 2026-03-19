@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>객체 Object</title>
   </head>
   <body>
     <h3>자바스크립트 객체</h3>
     <pre>
-      자바스크립트의 객체는 {}중괄호 내에
+      자바스크립트의 객체는 {}중괄호 내에 
       Key:Value가 모여있는 형태로 작성된다.
 
       { K:V, K:V, K:V }
@@ -23,16 +23,25 @@
         원산지: '필리핀',
       };
 
-      // 자바스크립트 객체의 key값은 "", ''를 생략하여도 문자열로 인식
+      // 자바스크립트 객체의 key값은 "", ''를 생략하여도
+      // 문자열로 인식
       // 단, value값은 문자열인 경우 "", '' 필수 작성
+      // console.log(product);
+
+      // 변수명.key : value 출력
+      console.log(product.제품명); // 7D 건조 망고
 
       // 반복문을 이용하여 value 출력
-      for (const key in product) {
-        console.log(product[key]);
-        console.log(key + ' : ' + product[key]);
-        console.log(`${key} : ${product[key]}`);
-        // Template literals(탬플릿 리터럴)
-        // ``(백틱)을 사용하여 문자열을 표현하는 방식
+      // for (변수 in 객체명){}
+      for (let i in product) {
+        console.log(i);
+        console.log(product[i]);
+
+        // alert(i + ' : ' + product[i]);
+
+        alert(`${i} : ${product[i]}`);
+        // Template literals(템플릿 리터럴)
+        // -> ``(백틱)을 사용하여 문자열을 표현하는 방식
       }
     </script>
   </body>

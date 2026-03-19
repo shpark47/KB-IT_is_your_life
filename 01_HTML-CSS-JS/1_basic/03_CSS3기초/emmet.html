@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- ul태그 안에 자식 li 6개 -->
+    ul>li*6
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+
+    ul>li.test
+    <ul>
+      <li class="test"></li>
+    </ul>
+
+    header+main+footer
+    <header></header>
+    <main></main>
+    <footer></footer>
+
+    div>div>p#test
+    <div>
+      <div>
+        <p id="test"></p>
+      </div>
+    </div>
+
+    ul>li{$}*10
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+    </ul>
+
+    ul>li#li$.li${li요소}*3
+    <ul>
+      <li class="li1" id="li1">li요소</li>
+      <li class="li2" id="li2">li요소</li>
+      <li class="li3" id="li3">li요소</li>
+    </ul>
+  </body>
+</html>

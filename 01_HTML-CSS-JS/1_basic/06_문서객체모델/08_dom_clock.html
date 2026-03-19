@@ -1,14 +1,15 @@
-<!doctype html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Clock</title>
     <script>
-      window.onload = () => {
-        const h1 = document.getElementById('clock');
-        setInterval(() => {
-          h1.innerText = new Date();
+      // 이벤트를 연결합니다.
+      window.onload = function () {
+        // 문서 객체를 선택합니다.
+        let clock = document.getElementById('clock');
+        // 1초마다 함수를 실행합니다.
+        setInterval(function () {
+          let now = new Date();
+          clock.innerHTML = now.toString();
         }, 1000);
 
         // setInterval(함수, 지연시간(ms))

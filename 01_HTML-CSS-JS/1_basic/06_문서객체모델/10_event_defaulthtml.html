@@ -1,26 +1,31 @@
 <!doctype html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Traditional Event -Default Event</title>
-    <!-- <script>
-      window.onload = () => {
-        document.getElementById('button').onclick = () => {
+    <title>Traditional Event - Default Event</title>
+    <script>
+      // 이벤트를 연결합니다.
+      window.onload = function () {
+        // 문서 객체를 선택합니다.
+        let button = document.getElementById('button');
+        // 이벤트를 연결합니다.
+        button.onclick = function () {
+          // 기본 이벤트를 제거합니다.
           return false;
         };
       };
-    </script> -->
+    </script>
   </head>
   <body>
-    <a id="button" href="https://www.naver.com">버튼</a>
+    <a id="button" href="http://hanbit.co.kr">버튼</a>
+
+    <a id="button1" href="http://hanbit.co.kr">버튼1</a>
 
     <script>
       // 표준 이벤트 모델
-      document.getElementById('button').addEventListener('click', (e) => {
+      document.getElementById('button1').addEventListener('click', (e) => {
         // return false;
-        // console.log(event); // 이벤트와 관련된 정보
-        // console.log(event.target); // 이벤트가 발생한 요소
+        //console.log(event); // 이벤트와 관련된 정보
+        //console.log(event.target); // 이벤트가 발생한 요소
 
         e.preventDefault();
         // a태그의 기본 이벤트 제거

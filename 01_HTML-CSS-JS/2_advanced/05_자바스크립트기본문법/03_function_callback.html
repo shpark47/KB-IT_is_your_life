@@ -1,21 +1,23 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>숙제 스니펫</title>
     <script>
-      function alertNum(num, callback) {
-        for (let i = 0; i < num; i++) {
-          callback();
+      // 함수를 선언합니다.
+      function callTenTimes(callback) {
+        // 10회 반복합니다.
+        for (let i = 0; i < 10; i++) {
+          callback(); // 매개변수로 전달된 함수를 호출합니다.
         }
       }
 
+      // 변수를 선언합니다.
       let fun = function () {
-        alert('함수 호출');
+        alert("함수호출");
       };
 
-      alertNum(3, fun);
+      // 함수를 호출합니다.
+      callTenTimes(fun);
     </script>
   </head>
   <body></body>
