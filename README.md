@@ -27,10 +27,6 @@
 ### 📝 Learning Status
 - [x] **MyBatis + MySQL 연동 실습**
 - [x] **Spring Boot 환경 설정**
-- [ ] **Vue.js 기초 문법 익히기** (Today 🏃)
+- [ ] **Vue.js 기초 문법 익히기**
 - [ ] MongoDB NoSQL 데이터 모델링
 
----
-
-### 📈 GitHub Stats
-![shpark47's GitHub stats](https://github-readme-stats.vercel.app/api?username=shpark47&show_icons=true&theme=tokyonight)
