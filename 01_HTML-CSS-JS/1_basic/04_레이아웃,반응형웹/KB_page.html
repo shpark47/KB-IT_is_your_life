@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KB Page</title>
+    <link rel="stylesheet" href="KB_page.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <section>
+          <!-- 클릭 시 메인페이지로 이동하는 로고
+              href="#" 임시 -->
+          <a href="#">
+            <img src="KB.png" alt="logo" id="main-logo" />
+          </a>
+        </section>
+
+        <section>
+          <!-- 검색창 -->
+          <section class="search-area">
+            <form action="#" name="search-form">
+              <!-- form 태그 내부의 input 태그 값이 서버 또는 페이지로 전달
+                   (단, input의 "name 속성"이 존재해야만 전달됨)-->
+
+              <fieldset>
+                <!-- fieldset : form태그 내부에서 input을
+                                종류별로 묶는 용도로 많이 사용함 -->
+
+                <input
+                  type="text"
+                  id="query"
+                  name="query"
+                  placeholder="검색어를 입력해주세요"
+                  autocomplete="off"
+                />
+                <!-- autocomplete : 자동완성 -->
+
+                <button id="search-btn">검색</button>
+              </fieldset>
+            </form>
+          </section>
+        </section>
+
+        <section></section>
+      </header>
+
+      <nav>
+        <ul>
+          <!-- 한줄 복사 : alt + shift + 아래방향키 -->
+          <li><a href="#">K-디지털</a></li>
+          <li><a href="#">프로그래밍</a></li>
+          <li><a href="#">데이터 분석</a></li>
+          <li><a href="#">정보보안</a></li>
+          <li><a href="#">클라우드</a></li>
+        </ul>
+      </nav>
+
+      <section class="content">
+        <section>
+          <h1>주요 컨텐츠 작성 부분</h1>
+        </section>
+
+        <section>
+          <h1>사이드 메뉴</h1>
+        </section>
+      </section>
+
+      <footer>
+        <p>Copyright &copy; KB It's your life 606 class</p>
+        <article>
+          <a href="#">프로젝트 소개</a>
+          <span>|</span>
+          <a href="#">이용약관</a>
+          <span>|</span>
+          <a href="#">개인정보처리방침</a>
+          <span>|</span>
+          <a href="#">고객센터</a>
+        </article>
+      </footer>
+    </main>
+  </body>
+</html>

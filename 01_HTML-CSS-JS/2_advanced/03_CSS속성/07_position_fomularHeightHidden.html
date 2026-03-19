@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 
+        absolute로 절대적 위치를 잡음
+        조상 요소에 relative가 없으면 초기 위치를 기준으로 잡음
+      */
+      .box {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+      }
+      .box:nth-child(1) {
+        background-color: red;
+        left: 10px;
+        top: 10px;
+        z-index: 100;
+      }
+      .box:nth-child(2) {
+        left: 50px;
+        top: 50px;
+        z-index: 10;
+        background-color: green;
+      }
+      .box:nth-child(3) {
+        left: 90px;
+        top: 90px;
+        z-index: 1;
+        background-color: blue;
+      }
+      /* 
+        relative로 안에 있는 absolute 요소들의 기준을 잡음
+        튀어나오는 요소들 overflow hidden으로 없애기
+      */
+      body > div {
+        height: 100px;
+        width: 400px;
+        border: 3px solid black;
+        position: relative;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Lorem ipsum dolor amet</h1>
+    <div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+    <h1>Lorem ipsum dolor amet</h1>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // 합계 저장용 변수
+      let sum = 0; // 전역 변수
+      for (let i = 0; i <= 100; i++) {
+        // 누적
+        sum += i;
+      }
+      // alert(i);
+      // ReferenceError : i is not defined
+      // -> i는 for문 안에서만 사용 가능하다
+
+      console.log(sum);
+    </script>
+  </head>
+  <body></body>
+</html>

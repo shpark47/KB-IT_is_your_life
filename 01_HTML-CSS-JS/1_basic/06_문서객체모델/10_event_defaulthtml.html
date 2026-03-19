@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Traditional Event -Default Event</title>
+    <!-- <script>
+      window.onload = () => {
+        document.getElementById('button').onclick = () => {
+          return false;
+        };
+      };
+    </script> -->
+  </head>
+  <body>
+    <a id="button" href="https://www.naver.com">버튼</a>
+
+    <script>
+      // 표준 이벤트 모델
+      document.getElementById('button').addEventListener('click', (e) => {
+        // return false;
+        // console.log(event); // 이벤트와 관련된 정보
+        // console.log(event.target); // 이벤트가 발생한 요소
+
+        e.preventDefault();
+        // a태그의 기본 이벤트 제거
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Basic</title>
+    <script>
+      // Date 객체 : 현재 시간
+      let date = new Date();
+      // console.log(date);
+      // -> 개발자도구에서 확인
+
+      let hours = date.getHours();
+      if (hours < 12) {
+        // 조건식이 true일 때만 수행
+        console.log('오전');
+      } else {
+        // hours >= 12
+        console.log('오후');
+      }
+    </script>
+  </head>
+  <body>
+    <h3>조건문 if - else</h3>
+    <pre>
+      작성법
+      if(조건식) {
+        조건식이 true일 때 수행할 코드
+      } else {
+        조건식이 false일 때 수행할 코드
+      }
+    </pre>
+  </body>
+</html>

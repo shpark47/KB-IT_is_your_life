@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.onload = () => {
+        document.body.setAttribute('data-custom', 'value');
+        // 요소.setAttribute("속성명", "속성값")
+        // -> 해당 요소에 속성명="속성값" 으로 추가.
+        // -> <body data-cusstom="value">
+
+        let data = document.body.getAttribute('data-custom');
+        // 요소.getAttribute("속성명") : 속성값 얻어오기
+
+        alert(data);
+      };
+    </script>
+  </head>
+  <body>
+    <div>practice</div>
+
+    <script>
+      // div 태그에 id 속성 추가 - id명 : practice
+      // div 태그에 class 속성 추가 - class명 : pr
+      const div = document.getElementsByTagName('div')[0];
+      // 얻어오는 요소가 하나여도 배열에 담긴다!
+      div.setAttribute('id', 'practice');
+      div.setAttribute('class', 'pr');
+    </script>
+  </body>
+</html>

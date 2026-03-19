@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.onload = () => {
+        const h1 = document.getElementById('clock');
+        setInterval(() => {
+          h1.innerText = new Date();
+        }, 1000);
+
+        // setInterval(함수, 지연시간(ms))
+        // -> : 지연시간 후 함수 실행
+      };
+    </script>
+  </head>
+  <body>
+    <h1 id="clock"></h1>
+  </body>
+</html>
