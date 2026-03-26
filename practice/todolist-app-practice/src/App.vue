@@ -5,7 +5,12 @@
     </div>
     <div class="card card-default panel-borderless">
       <div class="card-body">
-        <InputTodo /> <TodoList :todolist="todoList" />
+        <InputTodo @add-todo="addTodo" />
+        <TodoList
+          :todolist="todoList"
+          @check-completed="checkCompleted"
+          @delete-todo="deleteTodo"
+        />
       </div>
     </div>
   </div>
@@ -27,6 +32,26 @@ export default {
         { id: ts + 3, todo: 'Vue 원고 집필', completed: false },
       ],
     };
+  },
+  methods: {
+    addTodo(todo) {
+      this.todoList.push({
+        id: new Date().getTime(),
+        todo: todo,
+        completed: false,
+      });
+    },
+
+    checkCompleted(id) {
+      let i = this.todoList.findIndex((item) => id === item.id);
+      // TodoList.vue에서 넘겨받은 id로 todoList 배열에서 맞는 첫번째 id를 찾아서 i에 몇번째 배열에 있는지 변수저장
+      this.todoList[i].completed = !this.todoList[i].completed;
+    },
+
+    deleteTodo(id) {
+      let i = this.todoList.findIndex((item) => id === item.id);
+      this.todoList.splice(i, 1);
+    },
   },
 };
 </script>

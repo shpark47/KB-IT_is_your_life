@@ -6,6 +6,8 @@
           v-for="todoitem in todolist"
           :key="todoitem.id"
           :todoitem="todoitem"
+          @check-completed="$emit('check-completed', $event)"
+          @delete-todo="$emit('delete-todo', $event)"
         />
       </ul>
     </div>
@@ -20,5 +22,6 @@ export default {
     TodoListItem,
   },
   props: ['todolist'],
+  emits: ['check-completed', 'delete-todo'],
 };
 </script>
