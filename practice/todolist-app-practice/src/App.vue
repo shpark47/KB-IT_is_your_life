@@ -6,6 +6,7 @@
     <div class="card card-default panel-borderless">
       <div class="card-body">
         <InputTodo @add-todo="addTodo" />
+        <TodoCount :todolist="todoList" />
         <TodoList
           :todolist="todoList"
           @check-completed="checkCompleted"
@@ -19,10 +20,11 @@
 <script>
 import TodoList from './components/TodoList.vue';
 import InputTodo from './components/InputTodo.vue';
+import TodoCount from './components/TodoCount.vue';
 let ts = new Date().getTime();
 export default {
   name: 'App',
-  components: { InputTodo, TodoList },
+  components: { InputTodo, TodoList, TodoCount },
   data() {
     return {
       todoList: [
