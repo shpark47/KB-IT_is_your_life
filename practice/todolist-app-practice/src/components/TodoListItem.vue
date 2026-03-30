@@ -67,7 +67,11 @@ const updateBtn = () => {
 };
 
 const updateTodo = (e) => {
-  emits('update-todo', { id: props.todoitem.id, todo: e.target.value });
+  if (e.target.value.trim().length == 0) {
+    alert('빈칸으로 수정할 수 없습니다.');
+  } else {
+    emits('update-todo', { id: props.todoitem.id, todo: e.target.value });
+  }
 };
 
 const cancelUpdate = () => {
