@@ -3,6 +3,9 @@
     class="list-group-item"
     :class="{ 'list-group-item-success': todoitem.completed }"
   >
+    <span class="pointer me-3" @click="updatePin">{{
+      todoitem.isPinned ? '📌' : '📍'
+    }}</span>
     <input
       type="checkbox"
       class="pointer me-3"
@@ -11,14 +14,13 @@
     />
     <span
       v-if="todoitem.isEditing == false"
-      class="pointer me-3"
+      class="pointer"
       :class="todoitem.completed ? 'todo-done' : ''"
       @click="checkCompleted"
     >
       {{ todoitem.todo }} {{ todoitem.completed ? '(완료)' : '' }}
     </span>
     <input
-      class="me-3"
       v-else
       ref="editInput"
       :value="todoitem.todo"
@@ -48,6 +50,7 @@ const emits = defineEmits([
   'update-btn',
   'update-todo',
   'cancel-update',
+  'update-pin',
 ]);
 
 const checkCompleted = () => {
@@ -76,5 +79,9 @@ const updateTodo = (e) => {
 
 const cancelUpdate = () => {
   emits('cancel-update', props.todoitem.id);
+};
+
+const updatePin = () => {
+  emits('update-pin', props.todoitem.id);
 };
 </script>
