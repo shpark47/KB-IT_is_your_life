@@ -14,8 +14,8 @@ export default {
 import { useRoute } from 'vue-router';
 
 const route = useRoute();
-const path = route.path;
-console.log(`요청 경로 : ${path}`);
+const path = route.fullPath;
+console.log(`요청 경로 : ${route}`);
 </script>
 
 <style scoped></style>
