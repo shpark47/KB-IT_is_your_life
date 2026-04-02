@@ -9,7 +9,10 @@
           :key="m.id"
           class="col-6 col-xs-6 col-sm-4 col-md-3 col-lg-2"
         >
-          <router-link to=""> {{ m.id }} - {{ m.name }} </router-link>
+          <router-link :to="'/members/' + m.id">
+            <img :src="m.photo" class="img" /><br />
+            {{ m.name }}
+          </router-link>
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 {
-  "name": "router-test",
+  "name": "axios-test-app",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -9,10 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "bootstrap": "^5.3.8",
-    "vue": "^3.5.30",
-    "vue-router": "^5.0.3",
-    "youtube-vue3": "^0.1.15"
+    "axios": "1.14.0",
+    "vue": "^3.5.30"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.4",
