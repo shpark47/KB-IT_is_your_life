@@ -46,9 +46,6 @@ const requestAPI = () => {
     })
     .then((resp) => {
       console.log('두 번째 todo : ', resp.data);
-    })
-    .catch((e) => {
-      console.log(e);
     });
 };
 

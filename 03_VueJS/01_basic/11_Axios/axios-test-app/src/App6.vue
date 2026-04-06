@@ -5,31 +5,29 @@
 </template>
 
 <script setup>
+/* try-catch
+  try{ } : 예외가 발생할 가능성이 있는 코드
+  catch(e){ } : 예외 발생 시 수행할 코드
+  finally{ } : 마지막에 무조건 수행
+*/
+
 import axios from 'axios';
 
-// const listUrl = '/api/todos';
-const listUrl = '/api/todos2';
-
+// 에러 처리 예제
 const requestAPI = async () => {
-  let todoList = [];
-
   try {
-    const list = await axios.get(listUrl);
-    todoList = list.data;
-    console.log(todoList);
-
-    const todo1 = await axios.get(`${listUrl}/${todoList[0].id}`);
-    console.log('첫 번째 todo : ', todo1.data);
-
-    const todo2 = await axios.get(`${listUrl}/${todoList[1].id}`);
-    console.log('두 번째 todo : ', todo2.data);
-
-    let data = { todo: '윗몸일으키기 3세트', desc: '너무 빠르지 않게...' };
-    await axios.post(`${listUrl}`, data);
-
-    console.log(await axios.get(listUrl));
+    // 에러 발생 시 즉시 종료 후 catch문으로 이동
+    const url = '/api/todos2';
+    let resp = await axios.get(url);
+    console.log(resp.data);
   } catch (e) {
-    console.log(e);
+    console.log('에러 발생 시에만 수행');
+    if (e instanceof Error) {
+      // 객체 instanceof 타입 : 객체가 특정 타입으로 만들어졌는지 확인하는 연산자
+      console.log(e.message);
+    }
+  } finally {
+    console.log('finally는 무조건 수행');
   }
 };
 
