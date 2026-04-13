@@ -9,7 +9,7 @@
   <div class="row">
     <div class="col">
       <ul class="list-group">
-        <TodoItem v-for="todoItem in todoList" :todoItem />
+        <TodoItem v-for="todoItem in todoList" :key="todoItem.id" :todoItem />
       </ul>
     </div>
   </div>
