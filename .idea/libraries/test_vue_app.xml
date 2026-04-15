@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="test-vue-app">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/front/03_VueJS/01_basic/06_단일파일컴포넌트/test-vue-app.zip!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
