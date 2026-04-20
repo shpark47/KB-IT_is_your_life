@@ -42,12 +42,12 @@ const back = () => {
   <div>제목: <input v-model="memo.title" /></div>
   <!-- 5-5) submit 이벤트 핸들러를 등록하세요. -->
   <!--      submit 디폴트 액션은 차단하세요. -->
-  <form>
+  <form @submit.prevent="submit">
     <div>
       내용:
       <textarea rows="5" style="width: 100%" v-model="memo.content"></textarea>
     </div>
-    <input type="button" @click="submit" value="확인" />
+    <input type="submit" value="확인" />
     <button @click="back">돌아가기</button>
   </form>
 </template>
