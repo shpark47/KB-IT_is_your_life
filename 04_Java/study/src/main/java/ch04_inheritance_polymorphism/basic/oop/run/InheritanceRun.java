@@ -1,6 +1,6 @@
-package main.java.ch03_class.basic.oop.run;
+package main.java.ch04_inheritance_polymorphism.basic.oop.run;
 
-import main.java.ch03_class.basic.oop.model.service.InheritanceService;
+import main.java.ch04_inheritance_polymorphism.basic.oop.model.service.InheritanceService;
 
 public class InheritanceRun {
     public static void main(String[] args) {

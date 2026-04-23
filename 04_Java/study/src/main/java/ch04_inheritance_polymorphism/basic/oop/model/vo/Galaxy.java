@@ -1,4 +1,4 @@
-package main.java.ch03_class.basic.oop.model.vo;
+package main.java.ch04_inheritance_polymorphism.basic.oop.model.vo;
 
 public class Galaxy extends Phone {
     private boolean foldable;

@@ -1,8 +1,8 @@
-package main.java.ch03_class.basic.oop.model.service;
+package main.java.ch04_inheritance_polymorphism.basic.oop.model.service;
 
-import main.java.ch03_class.basic.oop.model.vo.Apple;
-import main.java.ch03_class.basic.oop.model.vo.Galaxy;
-import main.java.ch03_class.basic.oop.model.vo.Phone;
+import main.java.ch04_inheritance_polymorphism.basic.oop.model.vo.Apple;
+import main.java.ch04_inheritance_polymorphism.basic.oop.model.vo.Galaxy;
+import main.java.ch04_inheritance_polymorphism.basic.oop.model.vo.Phone;
 
 public class InheritanceService {
     public void ex1() {
