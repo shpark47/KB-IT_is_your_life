@@ -1,0 +1,10 @@
+package main.java.ch05_abstract_interface.basic.sec04;
+
+public interface RemoteControl {
+    int MAX_VOLUME = 10;
+    int MIN_VOLUME = 0;
+
+    void turnOn();
+    void turnOff();
+    void setVolume(int volume);
+}
