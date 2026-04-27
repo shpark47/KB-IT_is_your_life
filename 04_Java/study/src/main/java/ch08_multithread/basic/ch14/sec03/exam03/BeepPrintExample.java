@@ -1,7 +1,5 @@
 package main.java.ch08_multithread.basic.ch14.sec03.exam03;
 
-import main.java.ch08_multithread.basic.ch14.sec03.exam02.Beep;
-
 public class BeepPrintExample {
     public static void main(String[] args) {
         Thread thread = new Thread() {
