@@ -1,8 +1,8 @@
 package main.java.ch09_collection_generic.advanced.ch13.sec03.exam01;
 
 public class GenericExample {
-    public static Box boxing(Object t) {
-        Box box = new Box();
+    public static <T> Box<T> boxing(T t) {
+        Box<T> box = new Box<>();
         box.set(t);
         return box;
     }
