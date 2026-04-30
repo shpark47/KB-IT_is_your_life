@@ -65,4 +65,4 @@ const back = () => {
 };
 
 5-5] 템플릿에서 submit 이벤트 핸들러를 등록하세요.
-<button @click="back">돌아가기</button>
+<form @submit.prevent="submit">
