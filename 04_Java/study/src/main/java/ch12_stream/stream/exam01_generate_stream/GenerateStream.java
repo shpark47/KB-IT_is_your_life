@@ -1,4 +1,4 @@
-package main.java.ch12_stream.exam01_generate_stream;
+package main.java.ch12_stream.stream.exam01_generate_stream;
 
 import java.io.IOException;
 import java.nio.file.Files;

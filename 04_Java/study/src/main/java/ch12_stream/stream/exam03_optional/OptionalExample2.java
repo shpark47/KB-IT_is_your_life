@@ -1,4 +1,4 @@
-package main.java.ch12_stream.exam03_optional;
+package main.java.ch12_stream.stream.exam03_optional;
 
 import java.util.Optional;
 

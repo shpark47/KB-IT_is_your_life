@@ -1,4 +1,4 @@
-package main.java.ch12_stream.exam02_delay_operation;
+package main.java.ch12_stream.stream.exam02_delay_operation;
 
 import java.util.Arrays;
 import java.util.List;
