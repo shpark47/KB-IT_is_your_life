@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>북마크 허브</title>
+  <style>
+    :root {
+      --bg: #f6f8fc;
+      --panel: #ffffff;
+      --text: #1b1f2a;
+      --muted: #5d6475;
+      --ring: #dfe5f1;
+      --accent: #4f46e5;
+      --shadow: 0 10px 30px rgba(26, 35, 74, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Noto Sans KR", Arial, sans-serif;
+      background: radial-gradient(circle at 20% 0%, #eef2ff 0%, var(--bg) 45%);
+      color: var(--text);
+    }
+
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 42px 20px 56px;
+    }
+
+    .hero {
+      background: linear-gradient(140deg, #312e81 0%, #4338ca 55%, #6366f1 100%);
+      color: #fff;
+      border-radius: 20px;
+      padding: 28px 26px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      margin: 0 0 10px;
+      font-size: clamp(1.4rem, 2vw, 2rem);
+    }
+
+    .hero p {
+      margin: 0;
+      opacity: 0.92;
+      line-height: 1.5;
+    }
+
+    .section {
+      margin-top: 26px;
+      border-radius: 18px;
+      padding: 18px;
+      border: 1px solid #e7ebf5;
+    }
+
+    .section-title {
+      margin: 0 0 12px;
+      font-size: 1.15rem;
+      color: #20283a;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      display: block;
+      text-decoration: none;
+      background: var(--panel);
+      border: 1px solid var(--ring);
+      border-radius: 14px;
+      padding: 14px 14px 13px;
+      box-shadow: 0 4px 16px rgba(23, 29, 54, 0.04);
+      transition: transform 0.15s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: #c8d2ff;
+      box-shadow: 0 12px 28px rgba(38, 48, 96, 0.12);
+    }
+
+    .card:focus-visible {
+      outline: 3px solid rgba(79, 70, 229, 0.25);
+      outline-offset: 2px;
+    }
+
+    .name {
+      margin: 0 0 6px;
+      font-weight: 700;
+      font-size: 0.98rem;
+      color: var(--text);
+    }
+
+    .desc {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.4;
+    }
+
+    .footer {
+      margin-top: 30px;
+      text-align: center;
+      color: #71788d;
+      font-size: 0.85rem;
+    }
+
+    .section.ai {
+      background: #f3f0ff;
+      border-color: #e0d8ff;
+    }
+
+    .section.ai .card {
+      background: #fbf9ff;
+      border-color: #e6e0ff;
+    }
+
+    .section.dev {
+      background: #eefaf4;
+      border-color: #d7efdf;
+    }
+
+    .section.dev .card {
+      background: #f8fffb;
+      border-color: #dff3e7;
+    }
+
+    .section.design {
+      background: #eef7ff;
+      border-color: #d8e9fb;
+    }
+
+    .section.design .card {
+      background: #f7fbff;
+      border-color: #dfecfa;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <h1>북마크 허브</h1>
+      <p>용도별로 정리한 즐겨찾기 모음입니다. 카드를 클릭하면 새 탭으로 바로 이동합니다.</p>
+    </header>
+
+    <section class="section ai">
+      <h2 class="section-title">AI 챗봇 / 아이디어 도구</h2>
+      <div class="grid">
+        <a class="card" href="https://chatgpt.com/?utm_source=google&utm_medium=paid_search&utm_campaign=GOOG_C_SEM_GBR_Core_CHT_BAU_ACQ_PER_MIX_ALL_APAC_KR_EN_032525&c_id=22380436066&c_agid=175744042463&c_crid=741725602537&c_kwid={keywordid}&c_ims=&c_pms=9197309&c_nw=g&c_dvc=c&gad_source=1&gad_campaignid=22380436066" target="_blank" rel="noopener noreferrer">
+          <p class="name">ChatGPT</p>
+          <p class="desc">대화형 AI assistant</p>
+        </a>
+        <a class="card" href="https://claude.ai/" target="_blank" rel="noopener noreferrer">
+          <p class="name">Claude</p>
+          <p class="desc">긴 문서/코드 작업에 강한 AI</p>
+        </a>
+        <a class="card" href="https://gemini.google.com/app?hl=ko" target="_blank" rel="noopener noreferrer">
+          <p class="name">Gemini</p>
+          <p class="desc">Google AI 서비스</p>
+        </a>
+        <a class="card" href="https://grok.com/" target="_blank" rel="noopener noreferrer">
+          <p class="name">Grok</p>
+          <p class="desc">실시간 성향의 AI 검색/대화</p>
+        </a>
+        <a class="card" href="https://www.genspark.ai/" target="_blank" rel="noopener noreferrer">
+          <p class="name">Genspark</p>
+          <p class="desc">올인원 AI 워크스페이스</p>
+        </a>
+        <a class="card" href="https://gamma.app/" target="_blank" rel="noopener noreferrer">
+          <p class="name">Gamma</p>
+          <p class="desc">프레젠테이션/문서 생성</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="section dev">
+      <h2 class="section-title">개발 생산성 / 코드 도구</h2>
+      <div class="grid">
+        <a class="card" href="https://lovable.dev/" target="_blank" rel="noopener noreferrer">
+          <p class="name">Lovable</p>
+          <p class="desc">AI 앱/웹 빌더</p>
+        </a>
+        <a class="card" href="https://geminicli.com/" target="_blank" rel="noopener noreferrer">
+          <p class="name">Gemini CLI</p>
+          <p class="desc">CLI 기반 AI 코딩 도우미</p>
+        </a>
+        <a class="card" href="https://www.coderabbit.ai/?utm_source=google&utm_medium=cpc&utm_campaign=20944421732&utm_content=158532047035&utm_term=coderabbit&matchtype=e&kw=coderabbit&cpn=20944421732&utm_term=coderabbit&utm_campaign=CodeRabbit+-+Branded&utm_source=adwords&utm_medium=ppc&hsa_acc=9779635742&hsa_cam=20944421732&hsa_grp=158532047035&hsa_ad=697792407004&hsa_src=g&hsa_tgt=kwd-2227824575182&hsa_kw=coderabbit&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gad_source=1&gad_campaignid=20944421732" target="_blank" rel="noopener noreferrer">
+          <p class="name">CodeRabbit</p>
+          <p class="desc">AI 코드리뷰 자동화</p>
+        </a>
+        <a class="card" href="https://cursor.com/downloads" target="_blank" rel="noopener noreferrer">
+          <p class="name">Cursor 다운로드</p>
+          <p class="desc">Cursor 설치 파일 받기</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="section design">
+      <h2 class="section-title">디자인 / 배포 플랫폼</h2>
+      <div class="grid">
+        <a class="card" href="https://www.figma.com/files/team/1303299837970143634/project/119889827?fuid=999980283957547287" target="_blank" rel="noopener noreferrer">
+          <p class="name">Figma</p>
+          <p class="desc">디자인 협업 및 프로토타이핑</p>
+        </a>
+        <a class="card" href="https://render.com/" target="_blank" rel="noopener noreferrer">
+          <p class="name">Render</p>
+          <p class="desc">웹 서비스 배포/호스팅</p>
+        </a>
+        <a class="card" href="https://vercel.com/jungwonalicia-9564s-projects" target="_blank" rel="noopener noreferrer">
+          <p class="name">Vercel</p>
+          <p class="desc">프론트엔드 배포 플랫폼</p>
+        </a>
+      </div>
+    </section>
+
+ 
+  </div>
+</body>
+</html>

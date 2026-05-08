@@ -1,0 +1,804 @@
+{
+  "transactions": [
+    {
+      "id": 1,
+      "date": "2026-01-01",
+      "type": "expense",
+      "category": "쇼핑",
+      "amount": 52000,
+      "memo": "용돈"
+    },
+    {
+      "id": 2,
+      "date": "2026-01-04",
+      "type": "expense",
+      "category": "쇼핑",
+      "amount": 57000,
+      "memo": "스타벅스"
+    },
+    {
+      "id": 3,
+      "date": "2026-01-06",
+      "type": "expense",
+      "category": "교통비",
+      "amount": 56000,
+      "memo": "용돈"
+    },
+    {
+      "id": 4,
+      "date": "2026-01-15",
+      "type": "expense",
+      "category": "공과금",
+      "amount": 50000,
+      "memo": "약국"
+    },
+    {
+      "id": 5,
+      "date": "2026-01-15",
+      "type": "expense",
+      "category": "통신비",
+      "amount": 79000,
+      "memo": "이마트"
+    },
+    {
+      "id": 6,
+      "date": "2026-01-16",
+      "type": "expense",
+      "category": "생활용품",
+      "amount": 91000,
+      "memo": "배달의민족"
+    },
+    {
+      "id": 7,
+      "date": "2026-01-17",
+      "type": "expense",
+      "category": "여행",
+      "amount": 3000,
+      "memo": "약국"
+    },
+    {
+      "id": 8,
+      "date": "2026-01-19",
+      "type": "expense",
+      "category": "학원",
+      "amount": 71000,
+      "memo": "월급"
+    },
+    {
+      "id": 9,
+      "date": "2026-01-20",
+      "type": "expense",
+      "category": "생활용품",
+      "amount": 5000,
+      "memo": "배달의민족"
+    },
+    {
+      "id": 10,
+      "date": "2026-01-20",
+      "type": "income",
+      "category": "용돈",
+      "amount": 370000,
+      "memo": "전기요금"
+    },
+    {
+      "id": 11,
+      "date": "2026-01-22",
+      "type": "expense",
+      "category": "식비",
+      "amount": 86000,
+      "memo": "월급"
+    },
+    {
+      "id": 12,
+      "date": "2026-01-25",
+      "type": "income",
+      "category": "환급",
+      "amount": 330000,
+      "memo": "넷플릭스"
+    },
+    {
+      "id": 13,
+      "date": "2026-01-25",
+      "type": "expense",
+      "category": "학원",
+      "amount": 15000,
+      "memo": "전기요금"
+    },
+    {
+      "id": 14,
+      "date": "2026-01-26",
+      "type": "expense",
+      "category": "통신비",
+      "amount": 5000,
+      "memo": "전기요금"
+    },
+    {
+      "id": 15,
+      "date": "2026-01-27",
+      "type": "income",
+      "category": "급여",
+      "amount": 350000,
+      "memo": "월급"
+    },
+    {
+      "id": 16,
+      "date": "2026-02-01",
+      "type": "expense",
+      "category": "쇼핑",
+      "amount": 52000,
+      "memo": "배달의민족"
+    },
+    {
+      "id": 17,
+      "date": "2026-02-02",
+      "type": "expense",
+      "category": "학원",
+      "amount": 43000,
+      "memo": "이마트"
+    },
+    {
+      "id": 18,
+      "date": "2026-02-02",
+      "type": "expense",
+      "category": "교통비",
+      "amount": 63000,
+      "memo": "전기요금"
+    },
+    {
+      "id": 19,
+      "date": "2026-02-05",
+      "type": "income",
+      "category": "용돈",
+      "amount": 340000,
+      "memo": "전기요금"
+    },
+    {
+      "id": 20,
+      "date": "2026-02-08",
+      "type": "expense",
+      "category": "통신비",
+      "amount": 18000,
+      "memo": "GS25"
+    },
+    {
+      "id": 21,
+      "date": "2026-02-09",
+      "type": "expense",
+      "category": "여행",
+      "amount": 8000,
+      "memo": "지하철"
+    },
+    {
+      "id": 22,
+      "date": "2026-02-10",
+      "type": "expense",
+      "category": "학원",
+      "amount": 55000,
+      "memo": "스타벅스"
+    },
+    {
+      "id": 23,
+      "date": "2026-02-10",
+      "type": "income",
+      "category": "보너스",
+      "amount": 310000,
+      "memo": "용돈"
+    },
+    {
+      "id": 24,
+      "date": "2026-02-13",
+      "type": "income",
+      "category": "급여",
+      "amount": 190000,
+      "memo": "넷플릭스"
+    },
+    {
+      "id": 25,
+      "date": "2026-02-14",
+      "type": "expense",
+      "category": "쇼핑",
+      "amount": 74000,
+      "memo": "GS25"
+    },
+    {
+      "id": 26,
+      "date": "2026-02-15",
+      "type": "expense",
+      "category": "식비",
+      "amount": 95000,
+      "memo": "용돈"
+    },
+    {
+      "id": 27,
+      "date": "2026-02-16",
+      "type": "expense",
+      "category": "식비",
+      "amount": 55000,
+      "memo": "지하철"
+    },
+    {
+      "id": 28,
+      "date": "2026-02-16",
+      "type": "expense",
+      "category": "쇼핑",
+      "amount": 34000,
+      "memo": "지하철"
+    },
+    {
+      "id": 29,
+      "date": "2026-02-16",
+      "type": "income",
+      "category": "보너스",
+      "amount": 170000,
+      "memo": "쿠팡"
+    },
+    {
+      "id": 30,
+      "date": "2026-02-16",
+      "type": "expense",
+      "category": "쇼핑",
+      "amount": 46000,
+      "memo": "쿠팡"
+    },
+    {
+      "id": 31,
+      "date": "2026-02-16",
+      "type": "income",
+      "category": "부업",
+      "amount": 220000,
+      "memo": "이마트"
+    },
+    {
+      "id": 32,
+      "date": "2026-02-16",
+      "type": "expense",
+      "category": "생활용품",
+      "amount": 82000,
+      "memo": "넷플릭스"
+    },
+    {
+      "id": 33,
+      "date": "2026-02-18",
+      "type": "expense",
+      "category": "학원",
+      "amount": 24000,
+      "memo": "전기요금"
+    },
+    {
+      "id": 34,
+      "date": "2026-02-20",
+      "type": "income",
+      "category": "선물",
+      "amount": 120000,
+      "memo": "배달의민족"
+    },
+    {
+      "id": 35,
+      "date": "2026-02-21",
+      "type": "expense",
+      "category": "여행",
+      "amount": 55000,
+      "memo": "CGV"
+    },
+    {
+      "id": 36,
+      "date": "2026-02-21",
+      "type": "income",
+      "category": "환급",
+      "amount": 120000,
+      "memo": "넷플릭스"
+    },
+    {
+      "id": 37,
+      "date": "2026-02-22",
+      "type": "expense",
+      "category": "쇼핑",
+      "amount": 86000,
+      "memo": "CGV"
+    },
+    {
+      "id": 38,
+      "date": "2026-02-23",
+      "type": "expense",
+      "category": "공과금",
+      "amount": 13000,
+      "memo": "전기요금"
+    },
+    {
+      "id": 39,
+      "date": "2026-02-24",
+      "type": "expense",
+      "category": "생활용품",
+      "amount": 61000,
+      "memo": "배달의민족"
+    },
+    {
+      "id": 40,
+      "date": "2026-02-24",
+      "type": "expense",
+      "category": "교통비",
+      "amount": 100000,
+      "memo": "CGV"
+    },
+    {
+      "id": 41,
+      "date": "2026-02-26",
+      "type": "expense",
+      "category": "공과금",
+      "amount": 36000,
+      "memo": "스타벅스"
+    },
+    {
+      "id": 42,
+      "date": "2026-02-27",
+      "type": "expense",
+      "category": "통신비",
+      "amount": 65000,
+      "memo": "스타벅스"
+    },
+    {
+      "id": 43,
+      "date": "2026-03-01",
+      "type": "expense",
+      "category": "통신비",
+      "amount": 26000,
+      "memo": "용돈"
+    },
+    {
+      "id": 44,
+      "date": "2026-03-03",
+      "type": "expense",
+      "category": "통신비",
+      "amount": 39000,
+      "memo": "배달의민족"
+    },
+    {
+      "id": 45,
+      "date": "2026-03-03",
+      "type": "expense",
+      "category": "쇼핑",
+      "amount": 40000,
+      "memo": "지하철"
+    },
+    {
+      "id": 46,
+      "date": "2026-03-03",
+      "type": "expense",
+      "category": "공과금",
+      "amount": 54000,
+      "memo": "넷플릭스"
+    },
+    {
+      "id": 47,
+      "date": "2026-03-05",
+      "type": "expense",
+      "category": "공과금",
+      "amount": 12000,
+      "memo": "지하철"
+    },
+    {
+      "id": 48,
+      "date": "2026-03-05",
+      "type": "expense",
+      "category": "통신비",
+      "amount": 70000,
+      "memo": "지하철"
+    },
+    {
+      "id": 49,
+      "date": "2026-03-06",
+      "type": "expense",
+      "category": "교통비",
+      "amount": 60000,
+      "memo": "GS25"
+    },
+    {
+      "id": 50,
+      "date": "2026-03-06",
+      "type": "expense",
+      "category": "식비",
+      "amount": 22000,
+      "memo": "이마트"
+    },
+    {
+      "id": 51,
+      "date": "2026-03-06",
+      "type": "expense",
+      "category": "카페",
+      "amount": 74000,
+      "memo": "쿠팡"
+    },
+    {
+      "id": 52,
+      "date": "2026-03-09",
+      "type": "expense",
+      "category": "의료비",
+      "amount": 71000,
+      "memo": "스타벅스"
+    },
+    {
+      "id": 53,
+      "date": "2026-03-10",
+      "type": "income",
+      "category": "선물",
+      "amount": 350000,
+      "memo": "전기요금"
+    },
+    {
+      "id": 54,
+      "date": "2026-03-10",
+      "type": "expense",
+      "category": "생활용품",
+      "amount": 5000,
+      "memo": "월급"
+    },
+    {
+      "id": 55,
+      "date": "2026-03-11",
+      "type": "expense",
+      "category": "공과금",
+      "amount": 79000,
+      "memo": "CGV"
+    },
+    {
+      "id": 56,
+      "date": "2026-03-11",
+      "type": "income",
+      "category": "용돈",
+      "amount": 340000,
+      "memo": "넷플릭스"
+    },
+    {
+      "id": 57,
+      "date": "2026-03-11",
+      "type": "expense",
+      "category": "의료비",
+      "amount": 97000,
+      "memo": "전기요금"
+    },
+    {
+      "id": 58,
+      "date": "2026-03-13",
+      "type": "expense",
+      "category": "의료비",
+      "amount": 40000,
+      "memo": "쿠팡"
+    },
+    {
+      "id": 59,
+      "date": "2026-03-14",
+      "type": "expense",
+      "category": "문화생활",
+      "amount": 87000,
+      "memo": "넷플릭스"
+    },
+    {
+      "id": 60,
+      "date": "2026-03-17",
+      "type": "income",
+      "category": "환급",
+      "amount": 220000,
+      "memo": "전기요금"
+    },
+    {
+      "id": 61,
+      "date": "2026-03-22",
+      "type": "income",
+      "category": "선물",
+      "amount": 270000,
+      "memo": "용돈"
+    },
+    {
+      "id": 62,
+      "date": "2026-03-25",
+      "type": "expense",
+      "category": "학원",
+      "amount": 45000,
+      "memo": "넷플릭스"
+    },
+    {
+      "id": 63,
+      "date": "2026-03-25",
+      "type": "expense",
+      "category": "의료비",
+      "amount": 69000,
+      "memo": "넷플릭스"
+    },
+    {
+      "id": 64,
+      "date": "2026-03-27",
+      "type": "income",
+      "category": "부업",
+      "amount": 130000,
+      "memo": "GS25"
+    },
+    {
+      "id": 65,
+      "date": "2026-04-01",
+      "type": "income",
+      "category": "보너스",
+      "amount": 150000,
+      "memo": "넷플릭스"
+    },
+    {
+      "id": 66,
+      "date": "2026-04-01",
+      "type": "expense",
+      "category": "카페",
+      "amount": 8000,
+      "memo": "약국"
+    },
+    {
+      "id": 67,
+      "date": "2026-04-01",
+      "type": "income",
+      "category": "선물",
+      "amount": 210000,
+      "memo": "넷플릭스"
+    },
+    {
+      "id": 68,
+      "date": "2026-04-02",
+      "type": "expense",
+      "category": "여행",
+      "amount": 41000,
+      "memo": "스타벅스"
+    },
+    {
+      "id": 69,
+      "date": "2026-04-04",
+      "type": "expense",
+      "category": "문화생활",
+      "amount": 24000,
+      "memo": "용돈"
+    },
+    {
+      "id": 70,
+      "date": "2026-04-04",
+      "type": "expense",
+      "category": "공과금",
+      "amount": 24000,
+      "memo": "넷플릭스"
+    },
+    {
+      "id": 71,
+      "date": "2026-04-06",
+      "type": "income",
+      "category": "보너스",
+      "amount": 340000,
+      "memo": "배달의민족"
+    },
+    {
+      "id": 72,
+      "date": "2026-04-06",
+      "type": "expense",
+      "category": "의료비",
+      "amount": 69000,
+      "memo": "이마트"
+    },
+    {
+      "id": 73,
+      "date": "2026-04-08",
+      "type": "expense",
+      "category": "카페",
+      "amount": 61000,
+      "memo": "스타벅스"
+    },
+    {
+      "id": 74,
+      "date": "2026-04-10",
+      "type": "expense",
+      "category": "공과금",
+      "amount": 17000,
+      "memo": "스타벅스"
+    },
+    {
+      "id": 75,
+      "date": "2026-04-13",
+      "type": "expense",
+      "category": "학원",
+      "amount": 89000,
+      "memo": "넷플릭스"
+    },
+    {
+      "id": 76,
+      "date": "2026-04-13",
+      "type": "income",
+      "category": "보너스",
+      "amount": 180000,
+      "memo": "용돈"
+    },
+    {
+      "id": 77,
+      "date": "2026-04-14",
+      "type": "expense",
+      "category": "의료비",
+      "amount": 74000,
+      "memo": "CGV"
+    },
+    {
+      "id": 78,
+      "date": "2026-04-16",
+      "type": "expense",
+      "category": "통신비",
+      "amount": 11000,
+      "memo": "이마트"
+    },
+    {
+      "id": 79,
+      "date": "2026-04-18",
+      "type": "expense",
+      "category": "공과금",
+      "amount": 59000,
+      "memo": "약국"
+    },
+    {
+      "id": 80,
+      "date": "2026-04-26",
+      "type": "expense",
+      "category": "교통비",
+      "amount": 95000,
+      "memo": "이마트"
+    },
+    {
+      "id": 81,
+      "date": "2026-04-27",
+      "type": "income",
+      "category": "이자",
+      "amount": 180000,
+      "memo": "GS25"
+    },
+    {
+      "id": 82,
+      "date": "2026-04-28",
+      "type": "income",
+      "category": "환급",
+      "amount": 200000,
+      "memo": "스타벅스"
+    },
+    {
+      "id": 83,
+      "date": "2026-05-02",
+      "type": "expense",
+      "category": "쇼핑",
+      "amount": 22000,
+      "memo": "넷플릭스"
+    },
+    {
+      "id": 84,
+      "date": "2026-05-04",
+      "type": "income",
+      "category": "보너스",
+      "amount": 300000,
+      "memo": "지하철"
+    },
+    {
+      "id": 85,
+      "date": "2026-05-05",
+      "type": "expense",
+      "category": "쇼핑",
+      "amount": 97000,
+      "memo": "GS25"
+    },
+    {
+      "id": 86,
+      "date": "2026-05-05",
+      "type": "income",
+      "category": "부업",
+      "amount": 340000,
+      "memo": "쿠팡"
+    },
+    {
+      "id": 87,
+      "date": "2026-05-05",
+      "type": "expense",
+      "category": "교통비",
+      "amount": 95000,
+      "memo": "배달의민족"
+    },
+    {
+      "id": 88,
+      "date": "2026-05-06",
+      "type": "expense",
+      "category": "공과금",
+      "amount": 69000,
+      "memo": "GS25"
+    },
+    {
+      "id": 89,
+      "date": "2026-05-08",
+      "type": "expense",
+      "category": "공과금",
+      "amount": 29000,
+      "memo": "CGV"
+    },
+    {
+      "id": 90,
+      "date": "2026-05-08",
+      "type": "expense",
+      "category": "통신비",
+      "amount": 48000,
+      "memo": "용돈"
+    },
+    {
+      "id": 91,
+      "date": "2026-05-11",
+      "type": "expense",
+      "category": "교통비",
+      "amount": 8000,
+      "memo": "용돈"
+    },
+    {
+      "id": 92,
+      "date": "2026-05-11",
+      "type": "expense",
+      "category": "카페",
+      "amount": 8000,
+      "memo": "월급"
+    },
+    {
+      "id": 93,
+      "date": "2026-05-15",
+      "type": "income",
+      "category": "보너스",
+      "amount": 370000,
+      "memo": "배달의민족"
+    },
+    {
+      "id": 94,
+      "date": "2026-05-16",
+      "type": "expense",
+      "category": "학원",
+      "amount": 52000,
+      "memo": "전기요금"
+    },
+    {
+      "id": 95,
+      "date": "2026-05-18",
+      "type": "expense",
+      "category": "통신비",
+      "amount": 4000,
+      "memo": "넷플릭스"
+    },
+    {
+      "id": 96,
+      "date": "2026-05-20",
+      "type": "income",
+      "category": "이자",
+      "amount": 100000,
+      "memo": "스타벅스"
+    },
+    {
+      "id": 97,
+      "date": "2026-05-22",
+      "type": "expense",
+      "category": "카페",
+      "amount": 61000,
+      "memo": "전기요금"
+    },
+    {
+      "id": 98,
+      "date": "2026-05-24",
+      "type": "expense",
+      "category": "통신비",
+      "amount": 87000,
+      "memo": "약국"
+    },
+    {
+      "id": 99,
+      "date": "2026-05-27",
+      "type": "expense",
+      "category": "학원",
+      "amount": 13000,
+      "memo": "용돈"
+    },
+    {
+      "id": 100,
+      "date": "2026-05-27",
+      "type": "income",
+      "category": "이자",
+      "amount": 110000,
+      "memo": "GS25"
+    }
+  ]
+}
