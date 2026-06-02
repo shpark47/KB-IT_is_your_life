@@ -1,13 +1,11 @@
 package org.scoula.jdbc_ex.dao;
 
 import org.junit.jupiter.api.*;
-import org.scoula.jdbc_ex.JDBCUtil;
+import org.scoula.jdbc_ex.common.JDBCUtil;
 import org.scoula.jdbc_ex.domain.UserVo;
 
 import java.sql.SQLException;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class UserDaoTest {

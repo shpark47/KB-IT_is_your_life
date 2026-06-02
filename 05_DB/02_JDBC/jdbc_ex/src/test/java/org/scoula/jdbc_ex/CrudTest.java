@@ -1,6 +1,7 @@
 package org.scoula.jdbc_ex;
 
 import org.junit.jupiter.api.*;
+import org.scoula.jdbc_ex.common.JDBCUtil;
 
 import java.sql.*;
 

@@ -1,6 +1,6 @@
 package org.scoula.jdbc_ex.dao;
 
-import org.scoula.jdbc_ex.JDBCUtil;
+import org.scoula.jdbc_ex.common.JDBCUtil;
 import org.scoula.jdbc_ex.domain.UserVo;
 
 import java.sql.Connection;
