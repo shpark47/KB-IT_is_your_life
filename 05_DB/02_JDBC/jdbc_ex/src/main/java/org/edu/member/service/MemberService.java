@@ -164,6 +164,7 @@ public class MemberService {
         }
     }
 
+    // 회원 목록 전체 조회
     private void getList() throws SQLException {
         List<Member> list = dao.getList();
         if (list == null) {
