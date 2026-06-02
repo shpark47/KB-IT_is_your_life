@@ -2,6 +2,7 @@ package org.edu.member.service;
 
 import org.edu.member.dao.MemberDao;
 import org.edu.member.dao.MemberDaoImpl;
+import org.edu.member.dao.PshMemberDaoImpl;
 import org.edu.member.vo.Member;
 
 import java.sql.SQLException;
@@ -11,7 +12,12 @@ import java.util.Scanner;
 
 public class MemberService {
     private Scanner sc = new Scanner(System.in);
-    private MemberDao dao = new MemberDaoImpl();
+
+    // 수업
+//    private MemberDao dao = new MemberDaoImpl();
+
+    // 숙제
+    private MemberDao dao = new PshMemberDaoImpl();
 
     public void displayMenu() {
 
