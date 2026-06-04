@@ -19,5 +19,7 @@ public interface MemberDao {
     int delete(int no) throws SQLException;
 
     List<Member> getList() throws SQLException;
+
+    Member getDeptName(int no) throws SQLException;
 }
 

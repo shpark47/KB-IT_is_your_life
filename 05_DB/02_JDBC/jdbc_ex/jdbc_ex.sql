@@ -44,3 +44,54 @@ COMMIT;
 
 -- 추가 확인
 SELECT * FROM members;
+
+
+
+-- root 계정
+DROP TABLE IF EXISTS departments ;
+
+CREATE TABLE departments (
+                             dept_no INT AUTO_INCREMENT PRIMARY KEY,
+                             dept_name VARCHAR(50) NOT NULL,
+                             location VARCHAR(100)
+);
+
+INSERT INTO departments
+VALUES
+    (DEFAULT, '인사부', '서울'),
+    (DEFAULT, '총무부', '서울'),
+    (DEFAULT, '개발부', '판교'),
+    (DEFAULT, '영업부', '부산'),
+    (DEFAULT, '마케팅부', '서울');
+
+COMMIT;
+
+
+
+-- members 테이블이 존재하면 삭제
+DROP TABLE IF EXISTS members;
+
+-- 부서코드 추가한 members 생성
+CREATE TABLE members (
+                         no INT AUTO_INCREMENT PRIMARY KEY,
+                         id VARCHAR(30) NOT NULL UNIQUE,
+                         password VARCHAR(100) NOT NULL,
+                         name VARCHAR(30) NOT NULL,
+                         role VARCHAR(20) DEFAULT 'USER',
+                         dept_no INT,
+                         deleted_yn CHAR(1) DEFAULT 'N',
+
+                         CONSTRAINT fk_members_department
+                             FOREIGN KEY (dept_no)
+                                 REFERENCES departments(dept_no)
+);
+
+-- 샘플코드 추가
+INSERT INTO members
+VALUES
+    (DEFAULT, 'admin', '1234', '관리자', 'ADMIN', 3, 'N'),
+    (DEFAULT, 'park', '1111', '박지훈', 'USER', 1, 'N'),
+    (DEFAULT, 'go', '2222', '고윤정', 'USER', 2, 'N'),
+    (DEFAULT, 'minami', '3333', '미나미', 'USER', 4, 'N');
+
+COMMIT;
