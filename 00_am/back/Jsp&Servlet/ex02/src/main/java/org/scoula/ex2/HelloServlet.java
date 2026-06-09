@@ -1,4 +1,4 @@
-package org.scoula.ex02;
+package org.scoula.ex2;
 
 import java.io.*;
 import javax.servlet.http.*;
@@ -14,7 +14,9 @@ public class HelloServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
-        System.out.println("doGet호출됨. ==================");
+
+        System.out.println("doGet호출됨. ===========================");
+
         // Hello
         PrintWriter out = response.getWriter();
         out.println("<html><body>");
