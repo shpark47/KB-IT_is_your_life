@@ -1,4 +1,4 @@
-package org.edu.servletproject;
+package org.edu.servlet;
 
 import java.io.*;
 import javax.servlet.http.*;

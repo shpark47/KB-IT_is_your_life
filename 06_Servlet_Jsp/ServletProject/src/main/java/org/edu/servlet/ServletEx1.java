@@ -1,4 +1,4 @@
-package org.edu.servletproject;
+package org.edu.servlet;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

@@ -16,18 +16,18 @@
         - Servlet 클래스 정보를 웹 컨테이너에게 알려줌
         - 클래스 정보가 길기 때문에 별칭 등록
      -->
-    <servlet>
-        <servlet-name>helloServlet</servlet-name>
-        <servlet-class>org.edu.servletproject.HelloServlet</servlet-class>
-    </servlet>
+<!--    <servlet>-->
+<!--        <servlet-name>helloServlet</servlet-name>-->
+<!--        <servlet-class>org.edu.servlet.HelloServlet</servlet-class>-->
+<!--    </servlet>-->
 
     <!-- Servlet 매핑
         - "/hello-servlet" 주소 요청 시
         웹 컨테이너에 등록된 servlet 중 별칭이 "helloServlet"인 클래스를 찾음
         -> Servlet Container가 해당 클래스를 객체로 만들어서 관리
      -->
-    <servlet-mapping>
-        <servlet-name>helloServlet</servlet-name>
-        <url-pattern>/hello-servlet</url-pattern>
-    </servlet-mapping>
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>helloServlet</servlet-name>-->
+<!--        <url-pattern>/hello-servlet</url-pattern>-->
+<!--    </servlet-mapping>-->
 </web-app>
