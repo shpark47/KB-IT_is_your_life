@@ -1,4 +1,4 @@
-package org.scoula.advanced;
+package org.scoula;
 
 import java.io.*;
 import javax.servlet.http.*;
