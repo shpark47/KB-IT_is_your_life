@@ -28,5 +28,9 @@
                         직접 주소 작성, JS(location)
 --%>
 <a href="/pizza/order">피자 주문하기</a>
+
+<hr/>
+
+<a href="/scope">Servlet/JSP 내장 객체와 범위</a>
 </body>
 </html>
