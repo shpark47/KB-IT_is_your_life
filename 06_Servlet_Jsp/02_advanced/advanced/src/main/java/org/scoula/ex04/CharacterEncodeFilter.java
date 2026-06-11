@@ -1,4 +1,4 @@
-package org.ex04;
+package org.scoula.ex04;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
