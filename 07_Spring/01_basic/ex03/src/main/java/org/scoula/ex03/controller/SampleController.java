@@ -59,7 +59,7 @@ public class SampleController {
     }
 
     @GetMapping("/ex02List")
-    public void ex02List(ArrayList<String> ids, String[] ids2) {
+    public void ex02List(@RequestParam("ids") ArrayList<String> ids, @RequestParam("ids") String[] ids2) {
         log.info(ids.toString());
         log.info(Arrays.toString(ids2));
     }
