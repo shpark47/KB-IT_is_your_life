@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <!-- Appender, Layout 설정 -->
+    <Appenders>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout charset="UTF-8" pattern=" %-5level %c(%M:%L) - %m%n"/>
+
+            <!--- -5는 왼쪽 정렬로 5칸 확보
+                - level은 로그레벌 출력)
+                - %c은 로그가 발생한 클래스 이름 또는 로거 이름
+                - %M은 로그가 발생한 메서드 이름
+                - %L은 로그가 발생한 코드 라인 번호
+                - %c(%M:%L)은 클래스이름(메서드명:라인번호) &ndash;&gt; org.scoula.controller.HomeController(home:25)
+                - %m은 개발자가 직접 작성한 로그 메시지 &ndash;&gt; log.info("메인 페이지 요청"); 중 메인 페이지 요청
+                - %n은 줄바꿈
+                - 예) INFO  org.scoula.controller.MemberController(list:32) - 회원 목록 조회-->
+        </Console>
+    </Appenders>
+    <!-- Logger 설정 -->
+    <Loggers>
+        <Root level="INFO">
+            <AppenderRef ref="console"/>
+        </Root>
+        <Logger name="_org.springframework.web.servlet.HandlerMapping.Mappings" level="DEBUG" additivity="false">
+            <AppenderRef ref="console"/>
+        </Logger>
+        <Logger name="org.scoula" level="INFO" additivity="false">
+            <AppenderRef ref="console"/>
+        </Logger>
+        <Logger name="org.springframework" level="INFO" additivity="false">
+            <AppenderRef ref="console"/>
+        </Logger>
+    </Loggers>
+</Configuration>
