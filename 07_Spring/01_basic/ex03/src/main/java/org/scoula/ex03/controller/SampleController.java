@@ -2,12 +2,13 @@ package org.scoula.ex03.controller;
 
 import lombok.extern.log4j.Log4j2;
 import org.scoula.ex03.dto.SampleDTO;
+import org.scoula.ex03.dto.TodoDTO;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 @Controller
 @Log4j2
@@ -44,5 +45,27 @@ public class SampleController {
         redirect.addAttribute("name", "AAA");
         redirect.addAttribute("age", 10);
         return "redirect:/sample/ex06-2";
+    }
+
+    @GetMapping("/ex01")
+    public void ex01(SampleDTO dto) {
+        log.info(dto.toString());
+    }
+
+    @GetMapping("/ex02")
+    public void ex02(String name, int age) {
+        log.info(name);
+        log.info(age);
+    }
+
+    @GetMapping("/ex02List")
+    public void ex02List(ArrayList<String> ids, String[] ids2) {
+        log.info(ids.toString());
+        log.info(Arrays.toString(ids2));
+    }
+
+    @GetMapping("/ex03")
+    public void ex03(TodoDTO dto) {
+        log.info(dto.toString());
     }
 }
