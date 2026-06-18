@@ -5,7 +5,9 @@ import org.scoula.ex03.dto.SampleDTO;
 import org.scoula.ex03.dto.SampleDTOList;
 import org.scoula.ex03.dto.TodoDTO;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -140,5 +142,40 @@ public class SampleController {
         log.info("page: " + page);
         return "sample/ex04";
         // @ModelAttribute로 기본 자료형도 Model에 추가하여 뷰에서 접근 가능
+    }
+
+    @GetMapping("/ex05")
+    public void ex05() {
+        log.info("/ex05........");
+    }
+
+    @GetMapping("/ex06")
+    public String ex06(RedirectAttributes ra) {
+        log.info("/ex06........");
+        // 리다이렉트 시에도 데이터 전달 가능 (일회성)
+
+        // RedirectAttributes : 리다이렉트 시 데이터 전달
+
+        // forward : 서버 내부 이동 (요청 1번, 주소 유지)
+        // redirect : 브라우저에게 새 URL로 다시 요청하라고 지시 (요청 2번, 주소 변경)
+
+        // ra.addAttribute() : URL 쿼리스트링으로 데이터 전달
+        // ra.addFlashAttribute() : 리다이렉트 시 데이터를 request scope로 전달
+        //                          (세션에 잠깐 저장 후 request scope로 복원)
+
+        ra.addFlashAttribute("name", "AAA");  // URL 파라미터로 전달
+        ra.addAttribute("age", 10);
+        return "redirect:/sample/ex06-2";  // 클라이언트에게 새로운 URL로 재요청 지시
+    }
+
+    @GetMapping("/ex06-2")
+    public String ex062(
+            // 1. @RequestParam 이용해서 파라미터 값 전달 받기
+//            String name, int age
+
+            // 2. @ModelAttribute 이용해서 파라미터 값 전달 받기
+            SampleDTO dto
+    ) {
+        return "sample/ex06-2";
     }
 }
