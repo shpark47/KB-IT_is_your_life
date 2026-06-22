@@ -23,8 +23,8 @@ class BoardMapperTest {
 
     @Test
     @DisplayName("BoardMapper의 목록 불러오기")
-    public void getList() {
-        for(BoardVO board : boardMapper.getBoardList()) {
+    public void getBoardList() {
+        for (BoardVO board : boardMapper.getBoardList()) {
             log.info(board);
         }
     }
@@ -83,4 +83,5 @@ class BoardMapperTest {
         BoardVO deletedBoard = boardMapper.get(3L);
         assertNull(deletedBoard);
     }
+
 }
