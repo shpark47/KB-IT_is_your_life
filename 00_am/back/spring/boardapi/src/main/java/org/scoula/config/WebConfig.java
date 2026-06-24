@@ -28,15 +28,19 @@ public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitiali
     protected Class<?>[] getServletConfigClasses() {
         return new Class[]{
                 ServletConfig.class,
-                SwaggerConfig.class
-        };
+                SwaggerConfig.class };
     }
 
     //프론트컨트롤러 호출 주소 설정
     //@WebServlet("/")와 같은 역할
     @Override
     protected String[] getServletMappings() {
-        return new String[]{"/", "/swagger-ui.html", "/swagger-resources/**", "/v2/api-docs", "/webjars/**"};
+        return new String[]{"/",
+                "/swagger-ui.html",
+                "/swagger-resources/**",
+                "/v2/api-docs",
+                "/webjars/**"
+        };
     }
 
     // POSTbody문자인코딩필터설정-UTF-8설정
@@ -59,6 +63,4 @@ public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitiali
                 );
         registration.setMultipartConfig(multipartConfig);
     }
-
-
 }

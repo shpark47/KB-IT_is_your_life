@@ -17,7 +17,6 @@ import java.util.Date;
 @Builder
 @ApiModel(description = "게시글 DTO")
 public class BoardDTO {
-    @ApiModelProperty(value = "게시글 ID", example = "1")
     private Long no;
     @ApiModelProperty(value = "제목")
     private String title;
@@ -31,7 +30,7 @@ public class BoardDTO {
     private Date updateDate;
 
     //dto --> vo
-    public BoardVO toVo() {
+    public BoardVO toVo(){
         return BoardVO.builder()
                 .no(no)
                 .title(title)
@@ -47,13 +46,13 @@ public class BoardDTO {
 
         //BoardDTO boardDTO = new BoardDTO();
         //vo에 있는 것을 꺼내서 dto에 넣어야함.
-        return vo == null ? null : BoardDTO.builder()
-                .no(vo.getNo())
-                .title(vo.getTitle())
-                .content(vo.getContent())
-                .writer(vo.getWriter())
-                .regDate(vo.getRegDate())
-                .updateDate(vo.getUpdateDate())
-                .build();
+       return vo == null ? null : BoardDTO.builder()
+               .no(vo.getNo())
+               .title(vo.getTitle())
+               .content(vo.getContent())
+               .writer(vo.getWriter())
+               .regDate(vo.getRegDate())
+               .updateDate(vo.getUpdateDate())
+               .build();
     }
 }

@@ -36,13 +36,17 @@ public class ServletConfig implements WebMvcConfigurer {
                 // url이 /resources/로 시작하는 모든 경로
                 .addResourceLocations("/resources/");
 
-        // Swagger UI 리소스를 위한 핸들러설정
-        registry.addResourceHandler("/swagger-ui.html").addResourceLocations("classpath:/META-INF/resources/");
-        // Swagger WebJar 리소스 설정
-        registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
-        // Swagger 리소스 설정
-        registry.addResourceHandler("/swagger-resources/**").addResourceLocations("classpath:/META-INF/resources/");
-        registry.addResourceHandler("/v2/api-docs").addResourceLocations("classpath:/META-INF/resources/");
+// Swagger UI 리소스를 위한 핸들러 설정
+        registry.addResourceHandler("/swagger-ui.html")
+                .addResourceLocations("classpath:/META-INF/resources/");
+// Swagger WebJar 리소스 설정
+        registry.addResourceHandler("/webjars/**")
+                .addResourceLocations("classpath:/META-INF/resources/webjars/");
+// Swagger 리소스 설정
+        registry.addResourceHandler("/swagger-resources/**")
+                .addResourceLocations("classpath:/META-INF/resources/");
+        registry.addResourceHandler("/v2/api-docs")
+                .addResourceLocations("classpath:/META-INF/resources/");
     }
     // webapp/resources/경로로 매핑
 

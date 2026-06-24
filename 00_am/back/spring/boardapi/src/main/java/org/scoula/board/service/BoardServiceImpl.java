@@ -38,6 +38,7 @@ public class BoardServiceImpl implements BoardService{
     public BoardDTO create(BoardDTO board) {
         BoardVO vo = board.toVo();
         mapper.create(vo);
+        board.setNo(vo.getNo()); //dto에 db에서 생성된 no를 넣어줌.
         return get(vo.getNo());
     }
 

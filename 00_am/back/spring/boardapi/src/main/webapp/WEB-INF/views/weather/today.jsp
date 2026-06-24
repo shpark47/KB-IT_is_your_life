@@ -1,13 +1,20 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head><title>Title</title></head>
-<body>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+<%@ include file="../layouts/header.jsp"%>
+<h1>OpenAPI 이용한 날씨정보</h1>
 <div>
-    <h2>${city}</h2>
-    오늘의날씨: ${weather.weather[0].description} <img src="${iconUrl}"/>
+${city} <br>
+<img src="${iconUrl}" width="200" height="200"> <br>
+${weather} <br>
+온도 ${weather.main.temp} , 습도 ${weather.main.humidity} <br>
+
+
+
+
+
+    <hr>
+    <%
+        String c = (String)request.getAttribute("city");
+        out.print(c);
+    %>
 </div>
-<div>
-    온도: ${weather.main.temp}° / 습도: ${weather.main.humidity}%
-</div>
-</body>
-</html>
+<%@ include file="../layouts/footer.jsp" %>
