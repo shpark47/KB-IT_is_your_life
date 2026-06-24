@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.scoula.board.mapper.BoardMapper">
+
+    <select id="getList"
+            resultType="org.scoula.board.vo.BoardVO">
+
+        SELECT *
+        FROM board
+        ORDER BY no DESC
+
+    </select>
+
+    <select id="get"
+            resultType="org.scoula.board.vo.BoardVO">
+
+        SELECT *
+        FROM board
+        WHERE no = #{no}
+
+    </select>
+
+    <insert id="insert"
+            useGeneratedKeys="true"
+            keyProperty="no">
+
+        INSERT INTO board(title, writer, content)
+        VALUES(#{title}, #{writer}, #{content})
+
+    </insert>
+
+    <insert id="insertFile">
+
+        INSERT INTO board_file(
+            board_no,
+            file_name,
+            content_type,
+            file_data
+        )
+        VALUES(
+                  #{boardNo},
+                  #{fileName},
+                  #{contentType},
+                  #{fileData}
+              )
+
+    </insert>
+
+    <select id="getFile"
+            resultType="org.scoula.board.vo.BoardFileVO">
+
+        SELECT *
+        FROM board_file
+        WHERE file_id = #{fileId}
+
+    </select>
+
+    <select id="getFileByBoardNo"
+            resultType="org.scoula.board.vo.BoardFileVO">
+
+        SELECT *
+        FROM board_file
+        WHERE board_no = #{boardNo}
+
+    </select>
+</mapper>
