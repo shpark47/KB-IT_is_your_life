@@ -17,19 +17,23 @@ import static org.junit.jupiter.api.Assertions.*;
         SecurityConfig.class
 })
 @Log4j2
-class PasswordEncoderTest {
+class SecurityConfigTest {
 
     @Autowired
     private PasswordEncoder pwEncoder;
 
+
     @Test
-    public void testEncode() {
+    void passwordEncoder() {
         String str = "1234";
-        String enStr = pwEncoder.encode(str);       // 암호화
-        log.info("password: " + enStr);
-        String enStr2 = pwEncoder.encode(str);      // 암호화
-        log.info("password: " + enStr2);
-        log.info("match :" + pwEncoder.matches(str, enStr)); // 비밀번호 일치 여부 검사
-        log.info("match :" + pwEncoder.matches(str, enStr2)); // 비밀번호 일치 여부 검사
+
+        String encode1 = pwEncoder.encode(str); //암호화1
+        String encode2 = pwEncoder.encode(str); //암호화2
+
+        System.out.println("1234암호화 1 " + encode1);
+        System.out.println("1234암호화 2 " + encode2);
+
+        System.out.println(pwEncoder.matches(str, encode1));
+        System.out.println(pwEncoder.matches(str, encode2));
     }
 }

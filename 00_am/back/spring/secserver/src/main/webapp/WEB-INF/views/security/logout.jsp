@@ -4,10 +4,8 @@
     <title>Title</title>
 </head>
 <body>
-<body>
-<h1>
-    로그 아웃됨
-</h1>
-<a href="/">홈으로</a> </body>
+<h1>로그아웃됨.</h1>
+
+<a href="/">첫 화면으로 이동</a>
 </body>
 </html>
