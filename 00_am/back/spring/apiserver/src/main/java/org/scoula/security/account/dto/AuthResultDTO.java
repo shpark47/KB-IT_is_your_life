@@ -1,7 +1,6 @@
 package org.scoula.security.account.dto;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -10,5 +9,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class AuthResultDTO {
     String token;
-    UserInfoDTO user;
+    UserInfoDTO user; //memberVO에서 추출한 것만 모아놓은 것.
 }

@@ -6,12 +6,14 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
+<body bgcolor="aqua">
 <h1>환영합니다.</h1>
-<sec:authorize access="isAnonymous()">  <!-- 로그인 안한 경우-->
+
+<sec:authorize access="isAnonymous()">  <!-- 로그인 안한 경우 -->
     <a href="/security/login">로그인</a>
 </sec:authorize>
-<sec:authorize access="isAuthenticated()"> <!-- 로그인 한 경우-->
+
+<sec:authorize access="isAuthenticated()"> <!-- 로그인 한 경우 -->
     <a href="/security/admin">관리자페이지로</a> <br>
     <a href="/security/member">멤버페이지로</a> <br>
     <sec:authentication property="principal.username"/>
@@ -20,5 +22,6 @@
         <input type="submit" value="로그아웃"/>
     </form>
 </sec:authorize>
+
 </body>
 </html>

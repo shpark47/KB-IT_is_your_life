@@ -8,16 +8,13 @@ import java.util.Date;
 import java.util.List;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class MemberVO {
     private String username;
     private String password;
     private String email;
     private Date regDate;
     private Date updateDate;
-
-    private List<AuthVO> authList;
-
-    //MemberVO(AuthVO list)에 join한 결과를 넣어줌.
+    private List<AuthVO> authList; //username, auth(role)
 }

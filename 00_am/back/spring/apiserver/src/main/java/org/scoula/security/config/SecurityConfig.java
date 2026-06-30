@@ -3,6 +3,8 @@ package org.scoula.security.config;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.mybatis.spring.annotation.MapperScan;
+import org.scoula.security.filter.JwtUsernamePasswordAuthenticationFilter;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -13,53 +15,34 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.csrf.CsrfFilter;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.filter.CorsFilter;
+import org.springframework.web.filter.OncePerRequestFilter;
 
 @Configuration
 @EnableWebSecurity
 @Log4j2
 @MapperScan(basePackages = {"org.scoula.security.account.mapper"})
-@ComponentScan(basePackages = {"org.scoula.security"})
+@ComponentScan(basePackages  = {"org.scoula.security"})
 @RequiredArgsConstructor
-public class SecurityConfig extends WebSecurityConfigurerAdapter {
+public class SecurityConfig  extends WebSecurityConfigurerAdapter {
 
     private final UserDetailsService userDetailsService;
+
+    @Autowired
+    JwtUsernamePasswordAuthenticationFilter jwtUsernamePasswordAuthenticationFilter;
 
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
-    }
-
-    // AuthenticationManager 빈 등록
-    @Bean
-    public AuthenticationManager authenticationManager() throws Exception {
-        return super.authenticationManager();
-    }
-
-    // cross origin 접근 허용
-    @Bean
-    public CorsFilter corsFilter() {
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        CorsConfiguration config = new CorsConfiguration();
-        config.setAllowCredentials(true);
-        config.addAllowedOriginPattern("*");
-        config.addAllowedHeader("*");
-        config.addAllowedMethod("*");
-        source.registerCorsConfiguration("/**", config);
-        return new CorsFilter(source);
-    }
-
-    // 접근 제한 무시 경로 설정 – resource
-    @Override
-    public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/assets/**", "/*", "/api/member/**");
     }
 
     // 문자셋필터 ==> post방식으로 전달된 데이터 utf-8로 설정해서 받아야 한글깨지지 않음.
@@ -72,17 +55,45 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return encodingFilter;
     }
 
+    @Bean
+//    JWT 방식은 폼로그인과달리Spring Security의기
+//    본인증필터를사용하지않고,
+//    클라이언트→ JWT 토큰→ 커스텀필터
+//            (OncePerRequestFilter 등) → SecurityContext 직접 설정
+    public AuthenticationManager authenticationManager() throws Exception {
+        return super.authenticationManager();
+    }
+
+    @Bean
+    public CorsFilter corsFilter() {
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        CorsConfiguration config = new CorsConfiguration();
+        config.setAllowCredentials(true);
+        config.addAllowedOriginPattern("*");
+        config.addAllowedHeader("*");
+        config.addAllowedMethod("*");
+        source.registerCorsConfiguration("/**", config);
+        return new CorsFilter(source);
+    }
+
+    //시큐리티 적용하고 싶지 않은 요청 주소 등록.
+    @Override
+    public void configure(WebSecurity web) throws Exception {
+        web.ignoring().antMatchers("/assets/**", "/*", "/api/member/**");
+    }
+
     @Override
     public void configure(HttpSecurity http) throws Exception {
-        http.addFilterBefore(
-                encodingFilter(),
-                CsrfFilter.class
-        );
+        http.addFilterBefore(encodingFilter(),
+                        CsrfFilter.class)
+            .addFilterBefore(
+                    jwtUsernamePasswordAuthenticationFilter,
+                    UsernamePasswordAuthenticationFilter.class);
 
-        http.httpBasic().disable() // 기본 HTTP 인증 비활성화
-                .csrf().disable() // CSRF 비활성화
-                .formLogin().disable() // formLogin 비활성화 - 관련 필터 해제
-                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS); // 세션 생성 모드 설정
+        http.httpBasic().disable()
+                .csrf().disable()
+                .formLogin().disable()
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
         //role별 접근 권한 설정
         http.authorizeRequests()
@@ -108,22 +119,24 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
 
+
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         log.info("개인 계정 설정- ram에 만들어 테스트(in memory)");
 
-        auth.userDetailsService(userDetailsService)
+        auth
+                .userDetailsService(userDetailsService)
                 .passwordEncoder(passwordEncoder());
 
 //        auth.inMemoryAuthentication()
 //                .withUser("admin")
-//                    .password("{noop}1234")
+////                .password("{noop}1234")
 //                .password("$2a$10$CJEer.FckE2NtlHzgKRShemk8iSXL0JLPewdAQYLqDRXjG/PvKan6")
 //                .roles("ADMIN", "MEMBER");
 //
 //        auth.inMemoryAuthentication()
 //                .withUser("member")
-//                .password("{noop}1234")
+////                .password("{noop}1234")
 //                .password("$2a$10$XyJq1p6ZfcjhFNcYj253yOyAlvcVqeAbcbGOubKAnS1sHkNAzB/Wq")
 //                .roles("MEMBER");
 

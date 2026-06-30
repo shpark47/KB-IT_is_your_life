@@ -7,22 +7,21 @@ import org.scoula.security.account.domain.MemberVO;
 
 import java.util.List;
 
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Data
 public class UserInfoDTO {
     String username;
     String email;
     List<String> roles;
 
-    public static UserInfoDTO of(MemberVO member) {
+    public static UserInfoDTO of(MemberVO member){
+
         return new UserInfoDTO(
                 member.getUsername(),
                 member.getEmail(),
-                member.getAuthList().stream()
-                        .map(a-> a.getAuth())
-                        .toList()
-
-        );
+                member.getAuthList().stream().map(a -> a.getAuth()).toList() // {"role_admin", "role_member"}
+                );
     }
+
 }
