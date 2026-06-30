@@ -3,11 +3,16 @@ package org.scoula.security.config;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.mybatis.spring.annotation.MapperScan;
+import org.scoula.security.filter.AuthenticationErrorFilter;
+import org.scoula.security.filter.JwtAuthenticationFilter;
 import org.scoula.security.filter.JwtUsernamePasswordAuthenticationFilter;
+import org.scoula.security.handler.CustomAccessDeniedHandler;
+import org.scoula.security.handler.CustomAuthenticationEntryPoint;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -31,7 +36,7 @@ import org.springframework.web.filter.CorsFilter;
 
 /**
  * Spring Security 메인 설정 클래스
- *
+ * <p>
  * 주요 기능:
  * - 데이터베이스 기반 사용자 인증
  * - 커스텀 로그인/로그아웃 페이지
@@ -49,6 +54,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     /* 필드  추가 */
     private final UserDetailsService userDetailsService;   // CustomUserDetailsService 주입
+
+    // JWT 인증 필터
+    private final JwtAuthenticationFilter jwtAuthenticationFilter;
+
+    // 인증 예외 처리 필터
+    private final AuthenticationErrorFilter authenticationErrorFilter;
+
+    // 401/403 에러 처리 핸들러
+    private final CustomAccessDeniedHandler accessDeniedHandler;
+    private final CustomAuthenticationEntryPoint authenticationEntryPoint;
 
     // 커스텀 인증 필터 추가
     @Autowired
@@ -100,12 +115,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         // CSRF 필터보다 앞에 인코딩 필터 추가
         // - CSRF 필터는 Spring Security 환경에서 기본적으로 활성화 되어있음!
         http.addFilterBefore(encodingFilter(), CsrfFilter.class)
-
-        // API 로그인 인증 필터 추가 (기존 UsernamePasswordAuthenticationFilter 앞에 배치)
-            .addFilterBefore(jwtUsernamePasswordAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
-
-
-        // 기존 세션기반 로그인 2,3,4 메서드 제거
+                // 인증 에러 필터
+                .addFilterBefore(authenticationErrorFilter, UsernamePasswordAuthenticationFilter.class)
+                // JWT 인증필터
+                .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
+                // API 로그인 인증 필터 추가 (기존 UsernamePasswordAuthenticationFilter 앞에 배치)
+                .addFilterBefore(jwtUsernamePasswordAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
+                // 예외 처리 설정
+                .exceptionHandling()
+                .authenticationEntryPoint(authenticationEntryPoint)  // 401 에러 처리
+                .accessDeniedHandler(accessDeniedHandler);           // 403 에러 처리
 
         //  HTTP 보안 설정
         http.httpBasic().disable()      // 기본 HTTP 인증 비활성화
@@ -114,8 +133,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionManagement()        // 세션 관리 설정
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);  // 무상태 모드
 
+        http
+                .authorizeRequests() // 경로별 접근 권한 설정
+                .antMatchers(HttpMethod.OPTIONS).permitAll()  //  org.springframework.http.HttpMethod
+                .antMatchers("/api/security/all").permitAll()                    // 모두 허용
+                .antMatchers("/api/security/member").access("hasRole('ROLE_MEMBER')")  // ROLE_MEMBER 이상
+                .antMatchers("/api/security/admin").access("hasRole('ROLE_ADMIN')")    // ROLE_ADMIN 이상
+                .anyRequest().authenticated(); // 나머지는 로그인 필요
     }
-
 
 
     /**
@@ -135,7 +160,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .passwordEncoder(passwordEncoder());        // BCrypt 암호화 사용
 
     }
-
 
 
     // 브라우저의 CORS 정책을 우회하여 다른 도메인에서의 API 접근 허용
