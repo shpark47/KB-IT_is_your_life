@@ -1,0 +1,1 @@
+import{l as e,o as t,t as n}from"./index-w6ZPsOnL.js";var r={};function i(n,r){return e(),t(`h1`,null,`TravelListPage`)}var a=n(r,[[`render`,i]]);export{a as default};
