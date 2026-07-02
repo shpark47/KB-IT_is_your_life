@@ -31,11 +31,9 @@ public class SwaggerConfig {
                 .version(API_VERSION)
                 .build();
     }
-
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
-                // JWT 인증
                 .securityContexts(List.of(this.securityContext())) // SecurityContext 설정
                 .securitySchemes(List.of(this.apiKey())) // ApiKey 설정
                 .select()
@@ -45,19 +43,18 @@ public class SwaggerConfig {
                 .apiInfo(apiInfo());
     }
 
+    // JWT SecurityContext 구성
     private SecurityContext securityContext() {
         return SecurityContext.builder()
                 .securityReferences(defaultAuth())
                 .build();
     }
-
     private List<SecurityReference> defaultAuth() {
         AuthorizationScope authorizationScope = new AuthorizationScope("global", "accessEverything");
         AuthorizationScope[] authorizationScopes = new AuthorizationScope[1];
         authorizationScopes[0] = authorizationScope;
         return List.of(new SecurityReference("Authorization", authorizationScopes));
     }
-
     // ApiKey 정의
     private ApiKey apiKey() {
         return new ApiKey("Authorization", "Authorization", "header");

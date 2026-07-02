@@ -29,7 +29,9 @@ public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitiali
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class[]{ServletConfig.class, SwaggerConfig.class};
+        return new Class[]{
+                ServletConfig.class,
+                SwaggerConfig.class};
     }
 
     //프론트컨트롤러 호출 주소 설정

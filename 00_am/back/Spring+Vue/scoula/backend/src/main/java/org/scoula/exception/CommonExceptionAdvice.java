@@ -15,24 +15,9 @@ import javax.servlet.http.HttpServletRequest;
 @Log4j2
 @Order(1)
 public class CommonExceptionAdvice {
+
     @ExceptionHandler(NoHandlerFoundException.class)
     public String handle404(NoHandlerFoundException ex) {
         return "/resources/index.html";
     }
-
-//    @ExceptionHandler(Exception.class)
-//    public String except(Exception ex, Model model) {
-//        log.error("Exception ......." + ex.getMessage());
-//        model.addAttribute("exception", ex);
-//        log.error(model);
-//        return "error_page";
-//    }
-//
-//    @ExceptionHandler(NoHandlerFoundException.class)
-//    @ResponseStatus(HttpStatus.NOT_FOUND)
-//    public String handle404(NoHandlerFoundException ex, Model model, HttpServletRequest request) {
-//        log.error(ex);
-//        model.addAttribute("uri", request.getRequestURI());
-//        return "custom404";
-//    }
 }

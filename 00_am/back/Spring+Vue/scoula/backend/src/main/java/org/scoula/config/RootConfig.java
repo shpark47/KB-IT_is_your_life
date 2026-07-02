@@ -18,9 +18,10 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import javax.sql.DataSource;
 
 @Configuration
+@MapperScan(basePackages  = {"org.scoula.board.mapper", "org.scoula.member.mapper"})
+@ComponentScan(basePackages = {"org.scoula.board.service",  "org.scoula.member.service"})
 @PropertySource({"classpath:/application.properties"})
-@MapperScan(basePackages  = {"org.scoula.board.mapper"})
-@ComponentScan(basePackages = {"org.scoula.board.service"})
+//@MapperScan(basePackages  = {""})
 @EnableTransactionManagement
 public class RootConfig {
     //프로젝트 전체에서 사용할 중요한 싱글톤 빈 생성 정의

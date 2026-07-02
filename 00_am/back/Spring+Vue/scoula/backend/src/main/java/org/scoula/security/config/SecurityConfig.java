@@ -36,9 +36,9 @@ import org.springframework.web.filter.OncePerRequestFilter;
 @EnableWebSecurity
 @Log4j2
 @MapperScan(basePackages = {"org.scoula.security.account.mapper"})
-@ComponentScan(basePackages = {"org.scoula.security"})
+@ComponentScan(basePackages  = {"org.scoula.security"})
 @RequiredArgsConstructor
-public class SecurityConfig extends WebSecurityConfigurerAdapter {
+public class SecurityConfig  extends WebSecurityConfigurerAdapter {
 
     private final UserDetailsService userDetailsService;
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
@@ -88,10 +88,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     //시큐리티 적용하고 싶지 않은 요청 주소 등록.
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/assets/**", "/*", "/api/member/**",
-            // Swagger 관련 url은 보안에서 제외
-            "/swagger-ui.html", "/webjars/**", "/swagger-resources/**", "/v2/api-docs"
-        );
+        web.ignoring().antMatchers("/assets/**", "/*", "/api/member/**", "/swagger-ui.html", "/webjars/**", "/swagger-resources/**", "/v2/api-docs");
     }
 
     @Override
@@ -103,8 +100,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .addFilterBefore(jwtAuthenticationFilter,
                         UsernamePasswordAuthenticationFilter.class)
                 .addFilterBefore(
-                        jwtUsernamePasswordAuthenticationFilter,
-                        UsernamePasswordAuthenticationFilter.class);
+                    jwtUsernamePasswordAuthenticationFilter,
+                    UsernamePasswordAuthenticationFilter.class);
 
         http
                 .exceptionHandling()
@@ -125,8 +122,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests() // 경로별 접근 권한 설정
                 .antMatchers(HttpMethod.OPTIONS).permitAll()
-                // 일단 모든 접근 허용
-                .anyRequest().permitAll();
+                .anyRequest().permitAll(); // 일단 모든 접근 허용
 //                .antMatchers("/api/security/all").permitAll() // 모두 허용
 //                .antMatchers("/api/security/member").access("hasRole('ROLE_MEMBER')") // ROLE_MEMBER 이상 접근 허용
 //                .antMatchers("/api/security/admin").access("hasRole('ROLE_ADMIN')")
@@ -148,6 +144,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .logoutSuccessUrl("/security/logout"); // GET: 로그아웃 이후이동할페이지
 
     }
+
 
 
     @Override
