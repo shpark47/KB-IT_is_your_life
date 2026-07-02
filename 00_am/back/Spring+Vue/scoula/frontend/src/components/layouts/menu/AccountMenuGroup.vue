@@ -9,7 +9,9 @@ import config from '@/config';
 // 설정 파일에서 계정 메뉴 가져오기
 const { login, join } = config.accoutMenus;
 // 로그인 상태 (임시: false)
-const islogin = computed(() => false); // 임시: 로그인하지 않음 // 사용자 이름 (임시: 없음)
+const islogin = computed(() => false);
+// 임시: 로그인하지 않음
+// 사용자 이름 (임시: 없음)
 const username = computed(() => ''); // 임시: 사용자명 없음
 </script>
 <template>

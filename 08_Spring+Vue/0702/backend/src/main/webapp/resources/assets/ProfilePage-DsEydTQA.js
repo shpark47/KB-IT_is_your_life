@@ -1,0 +1,1 @@
+import{s as e,t,u as n}from"./index-CkbU0mEQ.js";var r={};function i(t,r){return n(),e(`h1`,null,`ProfilePage`)}var a=t(r,[[`render`,i]]);export{a as default};

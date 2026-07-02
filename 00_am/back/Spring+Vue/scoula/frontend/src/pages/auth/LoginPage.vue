@@ -1,5 +1,5 @@
 <script setup></script>
 
 <template>
-  <h1>ChangPasswordPage</h1>
+  <h1>LoginPage</h1>
 </template>

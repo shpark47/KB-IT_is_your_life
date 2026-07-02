@@ -5,7 +5,7 @@ import { reactive, computed } from 'vue';
 import config from '@/config';
 import MenuGroup from './menu/MenuGroup.vue';
 import AccountMenuGroup from './menu/AccountMenuGroup.vue';
-2;
+
 // 반응형 객체 생성. isNavShow는 네비게이션 메뉴의 표시 여부를 나타냄
 // 객체 형태의 반응형 상태 선언
 let state = reactive({ isNavShow: false });
@@ -23,14 +23,14 @@ const toggleNavShow = () => (state.isNavShow = !state.isNavShow);
 <template>
   <!-- 부트스트랩 스타일이 적용된 최상위 네비게이션 바 -->
   <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
-    <!-- 반응형 레이아웃을 위한 컨테이너  -->
+    <!-- 반응형 레이아웃을 위한 컨테이너 -->
     <div class="container-fluid">
       <!-- 홈으로 이동하는 라우터 링크, 브랜드 영역 -->
       <router-link class="navbar-brand" to="/">
         <i class="fa-solid fa-house"></i>
-        <!-- 집 모양 아이콘  -->
+        <!-- 집 모양 아이콘 -->
         Scoula
-        <!-- 브랜드명  -->
+        <!-- 브랜드명 -->
       </router-link>
       <!-- 모바일 화면에서 메뉴 버튼 역할을 하는 햄버거 버튼 -->
       <button
@@ -40,10 +40,10 @@ const toggleNavShow = () => (state.isNavShow = !state.isNavShow);
         data-bs-target="#collapsibleNavbar"
         @click="toggleNavShow"
       >
-        <!-- 햄버거 아이콘  -->
+        <!-- 햄버거 아이콘 -->
         <span class="navbar-toggler-icon"></span>
       </button>
-      <!-- 메뉴 영역: isNavShow 값에 따라 동적으로  class가 변경됨  -->
+      <!-- 메뉴 영역: isNavShow 값에 따라 동적으로 class가 변경됨 -->
       <div :class="navClass" id="collapsibleNavbar">
         <!-- 추후 네비게이션 메뉴 항목들이 들어갈 자리 -->
         <MenuGroup :menus="config.menus" />

@@ -13,6 +13,7 @@ const logout = (e) => {
   <!-- 로그아웃 링크 -->
   <a href="#" class="nav-link" @click.prevent="logout">
     <!-- 로그아웃 아이콘 -->
-    <i class="fa-solid fa-right-from-bracket"></i> 로그아웃
+    <i class="fa-solid fa-right-from-bracket"></i>
+    로그아웃
   </a>
 </template>
