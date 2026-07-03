@@ -31,4 +31,23 @@ export default {
     console.log(data);
     return data;
   },
+
+  async update(member) {
+    const formData = new FormData();
+    formData.append('username', member.username);
+    formData.append('password', member.password);
+    formData.append('email', member.email);
+
+    if (member.avatar) {
+      formData.append('avatar', member.avatar);
+    }
+
+    const { data } = await api.put(
+      `${BASE_URL}/${member.username}`,
+      formData,
+      headers,
+    );
+    console.log('AUTH PUT: ', data);
+    return data;
+  },
 };

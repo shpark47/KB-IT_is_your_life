@@ -23,6 +23,13 @@ public class ServletConfig implements WebMvcConfigurer {
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/")
                 .setViewName("forward:/resources/index.html");
+        // API, 정적 리소스가 아닌 나머지 경로는 전부 index.html로 포워딩
+        registry.addViewController("/{path:^(?!api|resources|assets|swagger-ui\\.html|webjars|swagger-resources|v2).*$}")
+                .setViewName("forward:/resources/index.html");
+
+    // 한 단계 더 깊은 경로 (/mypage/edit 같은)도 대응하려면 추가
+        registry.addViewController("/**/{path:[^\\.]*}")
+                .setViewName("forward:/resources/index.html");
     }
 
     //Servlet 3.0 이상 파일 업로드 사용시
