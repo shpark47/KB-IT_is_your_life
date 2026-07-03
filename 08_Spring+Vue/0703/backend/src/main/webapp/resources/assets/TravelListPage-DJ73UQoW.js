@@ -1,0 +1,1 @@
+import{g as e,s as t}from"./runtime-core.esm-bundler-DEXeagNA.js";import{r as n}from"./index-V6vrTTc9.js";var r={};function i(n,r){return e(),t(`h1`,null,`TravelListPage`)}var a=n(r,[[`render`,i]]);export{a as default};

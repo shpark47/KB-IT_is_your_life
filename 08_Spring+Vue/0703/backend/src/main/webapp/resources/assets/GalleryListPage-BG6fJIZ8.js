@@ -1,0 +1,1 @@
+import{g as e,s as t}from"./runtime-core.esm-bundler-DEXeagNA.js";import{i as n}from"./index-BeeMXDDY.js";var r={};function i(n,r){return e(),t(`h1`,null,`GalleryListPage`)}var a=n(r,[[`render`,i]]);export{a as default};
