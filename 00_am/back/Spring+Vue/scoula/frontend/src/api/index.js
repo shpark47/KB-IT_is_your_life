@@ -1,28 +1,25 @@
 import axios from 'axios';
-
 import { useAuthStore } from '@/stores/auth';
 import router from '@/router';
 
-const instance = axios.create({ timeout: 1000 });
-// 요청 인터셉터
-instance.interceptors.request.use(
-  (config) => {
-    // JWT 추출
-    const { getToken } = useAuthStore();
-    const token = getToken();
-    if (token) {
-      // 토큰이 있는 경우
-      config.headers['Authorization'] = `Bearer ${token}`;
-      console.log(config.headers.Authorization);
-    }
-    return config;
-  },
-  (error) => {
-    // 요청 중 에러가 난 경우
-    return Promise.reject(error);
-  },
-);
-// 응답 인터셉터
+const instance = axios.create({
+  timeout: 1000,
+});
+
+//axios요청 보낼 때 http header에 jwt token넣어서 보내야함.
+//axios응답 받을 때 꺼내기 전 응답내용을 확인해서 401, 403, 500 등
+//응답코드에 따라 동일하게 처리 가능!!!
+//==> 인터셉터(가로채다, 중간에 가로채서 멈추다.)
+
+instance.interceptors.request.use((config) => {
+  const { getToken } = useAuthStore();
+  const token = getToken();
+  if (token) {
+    config.headers['Authorization'] = `Bearer ${token}`;
+    console.log(config.headers.Authrization);
+  }
+  return config;
+});
 instance.interceptors.response.use(
   (response) => {
     if (response.status === 200) {
@@ -43,4 +40,4 @@ instance.interceptors.response.use(
     return Promise.reject(error);
   },
 );
-export default instance; // 인터셉터가 적용된 axios 인스턴스
+export default instance;

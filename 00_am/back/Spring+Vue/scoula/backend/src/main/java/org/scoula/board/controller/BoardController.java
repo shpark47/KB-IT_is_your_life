@@ -3,13 +3,17 @@ package org.scoula.board.controller;
 import io.swagger.annotations.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.scoula.board.domain.BoardAttachmentVO;
 import org.scoula.board.dto.BoardDTO;
 import org.scoula.board.service.BoardService;
+import org.scoula.common.util.UploadFiles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.File;
 import java.util.List;
 
 //@Controller //jsp, json(data)바로 전달 가능
@@ -65,7 +69,9 @@ public class BoardController {
     @PostMapping("")
     public ResponseEntity<BoardDTO> create(
             @ApiParam(value = "게시글객체", required = true)
-            @RequestBody BoardDTO board) {
+            BoardDTO board) {
+        System.out.println("=====================");
+        System.out.println(board);
         return ResponseEntity.ok(service.create(board));
     }
 
@@ -99,27 +105,10 @@ public class BoardController {
         return ResponseEntity.ok(service.delete(no));
     }
 
+    @DeleteMapping("/deleteAttachment/{no}")
+    public ResponseEntity<Boolean> deleteAttachment(@PathVariable Long no) throws Exception {
+        return ResponseEntity.ok(service.deleteAttachment(no));
 
+    }
 
-
-
-
-
-
-
-
-
-
-
-//    @GetMapping("/test") // /WEB-INF/views/test.jsp
-//    public void test(){
-//        System.out.println("test");
-//    }
-//
-//    @GetMapping("/test2") // dto --> json으로 바꾸어서 바로 응답
-//    public @ResponseBody test2(){
-//        System.out.println("test");
-//        BoardDTO dto = new BoardDTO();
-//        return dto;
-//    }
 }

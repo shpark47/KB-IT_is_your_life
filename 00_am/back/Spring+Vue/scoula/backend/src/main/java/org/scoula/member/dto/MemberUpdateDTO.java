@@ -13,7 +13,6 @@ public class MemberUpdateDTO {
     private String username;
     private String password;
     private String email;
-
     MultipartFile avatar;
 
     public MemberVO toVO() {

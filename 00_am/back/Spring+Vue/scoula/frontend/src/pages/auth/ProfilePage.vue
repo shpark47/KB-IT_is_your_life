@@ -2,9 +2,10 @@
 import authApi from '@/api/authApi';
 import { useAuthStore } from '@/stores/auth';
 import { computed, reactive, ref } from 'vue';
+import { useRouter } from 'vue-router';
 
+const router = useRouter();
 const auth = useAuthStore();
-
 const avatar = ref(null);
 const avatarPath = `/api/member/${auth.username}/avatar`;
 const member = reactive({
@@ -13,37 +14,33 @@ const member = reactive({
   password: '',
   avatar: null,
 });
-
 const error = ref('');
-
 const disableSubmit = computed(() => !member.email || !member.password);
 const onSubmit = async () => {
   if (!confirm('수정하시겠습니까?')) return;
-
   if (avatar.value.files.length > 0) {
     member.avatar = avatar.value.files[0];
   }
-
   try {
     await authApi.update(member);
     error.value = '';
     auth.changeProfile(member);
     alert('정보를 수정하였습니다.');
+    router.push('/');
   } catch (e) {
-    error.value = e.response.data;
+    error.value = e.response;
   }
 };
 </script>
+
 <template>
   <div class="mt-5 mx-auto" style="width: 500px">
     <h1><i class="fa-solid fa-user-gear my-3"></i> 회원 정보</h1>
-
     <form @submit.prevent="onSubmit">
       <div class="mb-3 mt-3">
         <img :src="avatarPath" class="avatar avatar-lg me-4" />
         {{ member.username }}
       </div>
-
       <div class="mb-3 mt-3">
         <label for="avatar" class="form-label">
           <i class="fa-solid fa-user-astronaut"></i>
@@ -70,7 +67,6 @@ const onSubmit = async () => {
           v-model="member.email"
         />
       </div>
-
       <div class="mb-3">
         <label for="password" class="form-label">
           <i class="fa-solid fa-lock"></i>
@@ -84,7 +80,6 @@ const onSubmit = async () => {
           v-model="member.password"
         />
       </div>
-
       <div v-if="error" class="text-danger">{{ error }}</div>
       <div class="text-center">
         <button
@@ -95,7 +90,6 @@ const onSubmit = async () => {
           <i class="fa-solid fa-user-plus"></i>
           확인
         </button>
-
         <router-link class="btn btn-primary mt-4" to="/auth/changepassword">
           <i class="fa-solid fa-lock"></i>
           비밀번호 변경

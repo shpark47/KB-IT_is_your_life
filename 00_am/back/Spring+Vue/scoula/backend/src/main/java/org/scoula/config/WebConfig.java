@@ -42,12 +42,12 @@ public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitiali
     }
 
     // POSTbody문자인코딩필터설정-UTF-8설정
-    protected Filter[] getServletFilters() {
-        CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
-        characterEncodingFilter.setEncoding("UTF-8");
-        characterEncodingFilter.setForceEncoding(true);
-        return new Filter[]{characterEncodingFilter};
-    }
+//    protected Filter[] getServletFilters() {
+//        CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
+//        characterEncodingFilter.setEncoding("UTF-8");
+//        characterEncodingFilter.setForceEncoding(true);
+//        return new Filter[]{characterEncodingFilter};
+//    }
 
     @Override
     protected void customizeRegistration(ServletRegistration.Dynamic registration) {

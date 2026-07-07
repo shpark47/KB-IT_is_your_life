@@ -11,8 +11,12 @@ const { login, join } = config.accoutMenus;
 
 import { useAuthStore } from '@/stores/auth.js';
 const auth = useAuthStore();
+
+// 로그인 상태 (임시: false)
 const islogin = computed(() => auth.isLogin);
-const username = computed(() => auth.username);
+// 임시: 로그인하지 않음
+// 사용자 이름 (임시: 없음)
+const username = computed(() => auth.username); // 임시: 사용자명 없음
 </script>
 <template>
   <ul class="navbar-nav ms-auto">

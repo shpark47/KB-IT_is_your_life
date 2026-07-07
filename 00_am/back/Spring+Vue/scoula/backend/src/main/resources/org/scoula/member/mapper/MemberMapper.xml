@@ -38,6 +38,7 @@
         INSERT INTO tbl_member_auth(username, auth)
         VALUES(#{username}, #{auth})
     </insert>
+
     <update id="update">
         UPDATE tbl_member
         SET
@@ -45,5 +46,14 @@
             update_date = now()
         WHERE username =#{username}
     </update>
+
+    <update id="updatePassword">
+        UPDATE tbl_member
+        SET
+            password = #{newPassword},
+            update_date = now()
+        WHERE username =#{username}
+    </update>
+
 </mapper>
 
